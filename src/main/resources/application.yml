@@ -1,0 +1,21 @@
+# default database properties
+database:
+  host: localhost
+  port: 5432
+  username: postgres
+  password: root
+
+# spring datasource properties
+spring:
+  datasource:
+    jdbc-url: jdbc:postgresql://${database.host}:${database.port}/
+    username: ${database.username}
+    password: ${database.password}
+    driver-class-name: org.postgresql.Driver
+    pool-size: 30
+    jpa:
+      show-sql: trye
+      generate-ddl: true
+      hibernate:
+        ddl-auto: create
+      database: userdb
