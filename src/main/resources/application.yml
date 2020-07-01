@@ -8,7 +8,7 @@ database:
 # spring datasource properties
 spring:
   datasource:
-    jdbc-url: jdbc:postgres://fhehmrcgzmpjhn:30af34cb97bae5f97d6c6a13ceb6a74d6511d6f16ec77bdaadab09a398857784@ec2-35-169-254-43.compute-1.amazonaws.com:5432/defp5q4qsijggp
+    jdbc-url: jdbc:postgresql://${database.host}:${database.port}/
     username: ${database.username}
     password: ${database.password}
     driver-class-name: org.postgresql.Driver
