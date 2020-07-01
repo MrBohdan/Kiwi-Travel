@@ -26,9 +26,9 @@ dbheroku:
 # spring datasource properties
 spring:
   datasource:
-    jdbc-url: jdbc:postgresql://${database.host}:${database.port}/
-    username: ${database.username}
-    password: ${database.password}
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
     driver-class-name: org.postgresql.Driver
     pool-size: 30
     jpa:
