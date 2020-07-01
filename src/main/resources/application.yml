@@ -1,3 +1,6 @@
+server:
+  port: 8005
+
 # default database properties
 database:
   host: localhost
