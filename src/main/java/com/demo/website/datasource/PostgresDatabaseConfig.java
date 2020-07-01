@@ -15,7 +15,7 @@ public class PostgresDatabaseConfig {
     private String dbUrl;
 
     @Bean
-    @ConfigurationProperties("dbheroku.datasource")
+    @ConfigurationProperties("spring.datasource")
     public HikariConfig hikariConfig(){
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(dbUrl);

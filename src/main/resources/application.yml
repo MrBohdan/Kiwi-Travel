@@ -8,6 +8,7 @@ database:
 # heroku datasource properties
 dbheroku:
   datasource:
+  jdbc-url: jdbc:postgresql://${database.host}:${database.port}/
   driver-class-name: org.postgresql.Driver
   pool-size: 30
   maxActive: 10
