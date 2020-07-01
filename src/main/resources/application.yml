@@ -10,11 +10,6 @@ dbheroku:
   datasource:
   jdbc-url: jdbc:postgresql://${database.host}:${database.port}/
   driver-class-name: org.postgresql.Driver
-  pool-size: 30
-  maxActive: 10
-  maxIdle: 5
-  minIdle: 2
-  initialSize: 5
   removeAbandoned: true
   jpa:
     show-sql: trye
@@ -26,14 +21,12 @@ dbheroku:
 # spring datasource properties
 spring:
   datasource:
-    url: ${JDBC_DATABASE_URL}
+    jdbc-url: ${JDBC_DATABASE_URL}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME}
     username: ${JDBC_DATABASE_USERNAME}
     password: ${JDBC_DATABASE_PASSWORD}
-    driver-class-name: org.postgresql.Driver
     pool-size: 30
-    jpa:
-      show-sql: trye
-      generate-ddl: true
-      hibernate:
-        ddl-auto: create
-      database: userdb
+    maxActive: 10
+    maxIdle: 5
+    minIdle: 2
+    initialSize: 5
