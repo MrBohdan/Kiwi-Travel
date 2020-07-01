@@ -11,11 +11,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PostgresDatabaseConfig {
 
-    @Value("${spring.datasource.url}")
+    @Value("${dbheroku.datasource.url}")
     private String dbUrl;
 
     @Bean
-    @ConfigurationProperties("spring.datasource")
+    @ConfigurationProperties("dbheroku.datasource")
     public HikariConfig hikariConfig(){
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl(dbUrl);
