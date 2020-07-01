@@ -1,8 +1,7 @@
 package com.demo.website.controller;
 
-import com.demo.website.model.UserProfile;
+import com.demo.website.model.User;
 import com.demo.website.service.UserProfileServie;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
@@ -25,12 +24,12 @@ public class UserProfileController {
     private UserProfileServie userProfileServie;
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody int addNewUser (@RequestBody UserProfile userProfile) {
-        return userProfileServie.addUser(userProfile);
+    public @ResponseBody int addNewUser (@RequestBody User user) {
+        return userProfileServie.addUser(user);
     }
 
     @GetMapping(path="/get") // Map ONLY GET Requests
-    public List<UserProfile> getUsers(){
+    public List<User> getUsers(){
        return userProfileServie.getAllUsers();
     }
 
@@ -40,7 +39,7 @@ public class UserProfileController {
     }
 
     @PutMapping(path="/put/{id}") // Map ONLY PUT Requests
-    public int updateUserById(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody UserProfile userProfile){
-        return userProfileServie.updateUser(id, userProfile);
+    public int updateUserById(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody User user){
+        return userProfileServie.updateUser(id, user);
     }
 }

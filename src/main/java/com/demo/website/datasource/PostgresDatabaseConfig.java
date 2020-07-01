@@ -14,7 +14,7 @@ public class PostgresDatabaseConfig {
 
     /**
      * These properties will be receive automatically from Heroku env vars if present
-     * By default using environment variables from pc
+     * By default using environment variables from pc.
      *
      */
     private final static String JDBC_DATABASE_URL = System.getenv("JDBC_DATABASE_URL");

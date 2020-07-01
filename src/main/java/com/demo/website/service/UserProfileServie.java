@@ -1,7 +1,7 @@
 package com.demo.website.service;
 
-import com.demo.website.model.UserProfile;
-import com.demo.website.repository.UserProfileDao;
+import com.demo.website.model.User;
+import com.demo.website.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -12,26 +12,26 @@ import java.util.UUID;
 @Service
 public class UserProfileServie {
 
-    private UserProfileDao userProfileDao;
+    private UserDao userDao;
 
     @Autowired
-    public UserProfileServie(@Qualifier("postgres") UserProfileDao userProfileDao) {
-        this.userProfileDao = userProfileDao;
+    public UserProfileServie(@Qualifier("postgres") UserDao userDao) {
+        this.userDao = userDao;
     }
 
-    public int addUser(UserProfile userProfile){
-        return userProfileDao.insertUser(userProfile);
+    public int addUser(User user){
+        return userDao.insertUser(user);
     }
 
-    public List<UserProfile> getAllUsers(){
-        return userProfileDao.findAll();
+    public List<User> getAllUsers(){
+        return userDao.findAll();
     }
 
     public int removeUser(UUID id){
-        return userProfileDao.deleteUserById(id);
+        return userDao.deleteUserById(id);
     }
 
-    public int updateUser(UUID id, UserProfile userProfile){
-        return userProfileDao.updateUserById(id, userProfile);
+    public int updateUser(UUID id, User user){
+        return userDao.updateUserById(id, user);
     }
 }

@@ -1,6 +1,6 @@
 package com.demo.website.repository;
 
-import com.demo.website.model.UserProfile;
+import com.demo.website.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -9,36 +9,36 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository("postgres")
-public class EmployeeDataAccessService implements UserProfileDao{
+public class UserDataAccessService implements UserDao {
 
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public EmployeeDataAccessService(JdbcTemplate jdbcTemplate) {
+    public UserDataAccessService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
-    public List<UserProfile> findAll() {
+    public List<User> findAll() {
         String sql = "SELECT * FROM users";
         return jdbcTemplate.query(sql, (resultSet, i) -> {
             UUID id = UUID.fromString(resultSet.getString("id"));
             String fullname = resultSet.getString("fullname");
             String username = resultSet.getString("username");
             String password = resultSet.getString("password");
-            return new UserProfile(id, fullname, username, password);
+            return new User(id, fullname, username, password);
         });
     }
 
     @Override
-    public int insertUser(UUID id, UserProfile userProfile) {
-        String sql = "INSERT INTO users (" +
+    public int insertUser(UUID id, User user) {
+        String sql = "INSERT INTO user (" +
                 "id," +
                 "fullname," +
                 "username," +
                 "password)" +
                 "VALUES (?,?,?,?)";
-        return jdbcTemplate.update(sql,id, userProfile.getFullname(), userProfile.getUsername(), userProfile.getPassword());
+        return jdbcTemplate.update(sql,id, user.getFullname(), user.getUsername(), user.getPassword());
     }
 
     @Override
@@ -48,11 +48,11 @@ public class EmployeeDataAccessService implements UserProfileDao{
     }
 
     @Override
-    public int updateUserById(UUID id, UserProfile userProfile) {
-        String sql = "UPDATE users SET fullname=?, username=?, password=? WHERE id=?";
-        return jdbcTemplate.update(sql, userProfile.getFullname(),
-                userProfile.getUsername(),
-                userProfile.getPassword(),id);
+    public int updateUserById(UUID id, User user) {
+        String sql = "UPDATE user SET fullname=?, username=?, password=? WHERE id=?";
+        return jdbcTemplate.update(sql, user.getFullname(),
+                user.getUsername(),
+                user.getPassword(),id);
     }
 
 }

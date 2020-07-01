@@ -1,12 +1,14 @@
 package com.demo.website.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
 @Entity
 @Table(name = "posts")
-public class Posts {
+public class Post {
 
     @Id
     private UUID idPost;
@@ -14,6 +16,19 @@ public class Posts {
     private String title;
     private String description;
     private Timestamp timestamp;
+
+    public Post(@JsonProperty("id") UUID idPost,
+                @JsonProperty("title") String title,
+                @JsonProperty("description") String description,
+                @JsonProperty("timestamp") Timestamp timestamp) {
+        this.idPost = idPost;
+        this.title = title;
+        this.description = description;
+        this.timestamp = timestamp;
+    }
+
+    public Post() {
+    }
 
     public UUID getIdPost() {
         return idPost;
