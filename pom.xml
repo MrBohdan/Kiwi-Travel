@@ -118,7 +118,7 @@
 							<goal>npm</goal>
 						</goals>
 						<configuration>
-							<arguments>npm install</arguments>
+							<arguments>install</arguments>
 						</configuration>
 					</execution>
 					<execution>
