@@ -21,3 +21,15 @@ spring:
     minIdle: 2
     initialSize: 5
 
+# heroku datasource properties
+dbheroku:
+  datasource:
+  jdbc-url: jdbc:postgresql://${database.host}:${database.port}/
+  driver-class-name: org.postgresql.Driver
+  removeAbandoned: true
+  jpa:
+    show-sql: trye
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    database: userdb
