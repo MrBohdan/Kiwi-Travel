@@ -1,22 +1,22 @@
 package com.demo.website.repository;
 
-import com.demo.website.model.User;
+import com.demo.website.model.Staff;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface UserDao {
 
-    List<User> findAll();
+    List<Staff> findAll();
 
-    int insertUser(UUID id, User user);
+    int insertUser(UUID id, Staff staff);
 
-    default int insertUser(User user){
+    default int insertUser(Staff staff){
         UUID id = UUID.randomUUID();
-        return insertUser(id, user);
+        return insertUser(id, staff);
     }
 
     int deleteUserById(UUID id);
 
-    int updateUserById(UUID id, User user);
+    int updateUserById(UUID id, Staff staff);
 }

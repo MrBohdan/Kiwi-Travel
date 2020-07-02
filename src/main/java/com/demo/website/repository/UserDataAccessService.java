@@ -1,6 +1,6 @@
 package com.demo.website.repository;
 
-import com.demo.website.model.User;
+import com.demo.website.model.Staff;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -19,14 +19,14 @@ public class UserDataAccessService implements UserDao {
     }
 
     @Override
-    public List<User> findAll() {
+    public List<Staff> findAll() {
         String sql = "SELECT * FROM staff";
         return jdbcTemplate.query(sql, (resultSet, i) -> {
             UUID id = UUID.fromString(resultSet.getString("id"));
             String fullname = resultSet.getString("fullname");
             String username = resultSet.getString("username");
             String password = resultSet.getString("password");
-            return new User(id,
+            return new Staff(id,
                     fullname,
                     username,
                     password);
@@ -34,7 +34,7 @@ public class UserDataAccessService implements UserDao {
     }
 
     @Override
-    public int insertUser(UUID id, User user) {
+    public int insertUser(UUID id, Staff staff) {
         String sql = "INSERT INTO staff (" +
                 "id," +
                 "fullname," +
@@ -43,9 +43,9 @@ public class UserDataAccessService implements UserDao {
                 "VALUES (?,?,?,?)";
         return jdbcTemplate.update(sql,
                 id,
-                user.getFullname(),
-                user.getUsername(),
-                user.getPassword());
+                staff.getFullname(),
+                staff.getUsername(),
+                staff.getPassword());
     }
 
     @Override
@@ -55,11 +55,11 @@ public class UserDataAccessService implements UserDao {
     }
 
     @Override
-    public int updateUserById(UUID id, User user) {
+    public int updateUserById(UUID id, Staff staff) {
         String sql = "UPDATE staff SET fullname=?, username=?, password=? WHERE id=?";
-        return jdbcTemplate.update(sql, user.getFullname(),
-                user.getUsername(),
-                user.getPassword(),id);
+        return jdbcTemplate.update(sql, staff.getFullname(),
+                staff.getUsername(),
+                staff.getPassword(),id);
     }
 
 }

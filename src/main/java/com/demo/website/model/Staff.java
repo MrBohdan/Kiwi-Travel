@@ -9,8 +9,8 @@ import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "staff")
+public class Staff {
 
     @Id
     private UUID uuid;
@@ -18,17 +18,17 @@ public class User {
     private String username;
     private String password;
 
-    public User(@JsonProperty("id") UUID uuid,
-                @JsonProperty("fullname") String fullname,
-                @JsonProperty("username") String username,
-                @JsonProperty("password") String password) {
+    public Staff(@JsonProperty("id") UUID uuid,
+                 @JsonProperty("fullname") String fullname,
+                 @JsonProperty("username") String username,
+                 @JsonProperty("password") String password) {
         this.uuid = uuid;
         this.fullname = fullname;
         this.username = username;
         this.password = password;
     }
 
-    public User() {
+    public Staff() {
     }
 
     public UUID getUuid() {
@@ -66,12 +66,12 @@ public class User {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return uuid.equals(user.uuid) &&
-                fullname.equals(user.fullname) &&
-                username.equals(user.username) &&
-                password.equals(user.password);
+        if (!(o instanceof Staff)) return false;
+        Staff staff = (Staff) o;
+        return uuid.equals(staff.uuid) &&
+                fullname.equals(staff.fullname) &&
+                username.equals(staff.username) &&
+                password.equals(staff.password);
     }
 
     @Override

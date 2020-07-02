@@ -1,6 +1,6 @@
 package com.demo.website.controller;
 
-import com.demo.website.model.User;
+import com.demo.website.model.Staff;
 import com.demo.website.service.UserProfileServie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
@@ -18,18 +18,18 @@ import java.util.UUID;
 @RequestMapping("api/v1.0/")
 //TODO
 @CrossOrigin("*") // should be defined
-public class UserProfileController {
+public class StaffController {
 
     @Autowired
     private UserProfileServie userProfileServie;
 
     @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody int addNewUser (@RequestBody User user) {
-        return userProfileServie.addUser(user);
+    public @ResponseBody int addNewUser (@RequestBody Staff staff) {
+        return userProfileServie.addUser(staff);
     }
 
     @GetMapping(path="/get") // Map ONLY GET Requests
-    public List<User> getUsers(){
+    public List<Staff> getUsers(){
        return userProfileServie.getAllUsers();
     }
 
@@ -39,7 +39,7 @@ public class UserProfileController {
     }
 
     @PutMapping(path="/put/{id}") // Map ONLY PUT Requests
-    public int updateUserById(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody User user){
-        return userProfileServie.updateUser(id, user);
+    public int updateUserById(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Staff staff){
+        return userProfileServie.updateUser(id, staff);
     }
 }

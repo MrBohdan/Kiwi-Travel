@@ -1,6 +1,6 @@
 package com.demo.website.service;
 
-import com.demo.website.model.User;
+import com.demo.website.model.Staff;
 import com.demo.website.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,11 +19,11 @@ public class UserProfileServie {
         this.userDao = userDao;
     }
 
-    public int addUser(User user){
-        return userDao.insertUser(user);
+    public int addUser(Staff staff){
+        return userDao.insertUser(staff);
     }
 
-    public List<User> getAllUsers(){
+    public List<Staff> getAllUsers(){
         return userDao.findAll();
     }
 
@@ -31,7 +31,7 @@ public class UserProfileServie {
         return userDao.deleteUserById(id);
     }
 
-    public int updateUser(UUID id, User user){
-        return userDao.updateUserById(id, user);
+    public int updateUser(UUID id, Staff staff){
+        return userDao.updateUserById(id, staff);
     }
 }

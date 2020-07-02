@@ -4,10 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
-@Table(name = "post")
+@Table(name = "posts")
 public class Post {
 
     @Id
@@ -60,5 +61,21 @@ public class Post {
 
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Post)) return false;
+        Post post = (Post) o;
+        return idPost.equals(post.idPost) &&
+                title.equals(post.title) &&
+                description.equals(post.description) &&
+                timestamp.equals(post.timestamp);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idPost, title, description, timestamp);
     }
 }
