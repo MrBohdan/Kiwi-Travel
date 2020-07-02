@@ -20,13 +20,16 @@ public class UserDataAccessService implements UserDao {
 
     @Override
     public List<User> findAll() {
-        String sql = "SELECT * FROM users";
+        String sql = "SELECT * FROM user";
         return jdbcTemplate.query(sql, (resultSet, i) -> {
             UUID id = UUID.fromString(resultSet.getString("id"));
             String fullname = resultSet.getString("fullname");
             String username = resultSet.getString("username");
             String password = resultSet.getString("password");
-            return new User(id, fullname, username, password);
+            return new User(id,
+                    fullname,
+                    username,
+                    password);
         });
     }
 
@@ -38,12 +41,16 @@ public class UserDataAccessService implements UserDao {
                 "username," +
                 "password)" +
                 "VALUES (?,?,?,?)";
-        return jdbcTemplate.update(sql,id, user.getFullname(), user.getUsername(), user.getPassword());
+        return jdbcTemplate.update(sql,
+                id,
+                user.getFullname(),
+                user.getUsername(),
+                user.getPassword());
     }
 
     @Override
     public int deleteUserById(UUID id) {
-        String sql = "DELETE FROM users WHERE id=?";
+        String sql = "DELETE FROM user WHERE id=?";
         return jdbcTemplate.update(sql,id);
     }
 
