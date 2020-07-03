@@ -102,73 +102,8 @@
 				<groupId>com.github.eirslett</groupId>
 				<artifactId>frontend-maven-plugin</artifactId>
 				<version>1.9.1</version>
-				<configuration>
-					<workingDirectory>frontend</workingDirectory>
-					<installDirectory>target</installDirectory>
-				</configuration>
-				<!-- begin the installation of 'yard' -->
-				<executions>
-					<execution>
-						<id>install node and yarn</id>
-						<goals>
-							<goal>install-node-and-yarn</goal>
-						</goals>
-						<configuration>
-							<nodeVersion>v12.18.1</nodeVersion>
-							<yarnVersion>v1.22.4</yarnVersion>
-						</configuration>
-					</execution>
-					<!-- the installation of 'yard' -->
-					<execution>
-						<id>yarn install</id>
-						<goals>
-							<goal>yarn</goal>
-						</goals>
-						<configuration>
-							<arguments>install</arguments>
-						</configuration>
-					</execution>
-					<!-- addition of package.json-->
-					<execution>
-						<id>yarn add package.json</id>
-						<goals>
-							<goal>yarn</goal>
-						</goals>
-						<configuration>
-							<arguments>add package.json</arguments>
-						</configuration>
-					</execution>
-					<!-- addition of build-->
-					<execution>
-						<id>yarn run build</id>
-						<goals>
-							<goal>yarn</goal>
-						</goals>
-						<configuration>
-							<arguments>run build</arguments>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
-			<!-- INCLUDE FRONTEND BUILD FILES IN SPRING BOOT JAR -->
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>generate-resources</phase>
-						<configuration>
-							<target>
-								<copy todir="${project.build.directory}/classes/public">
-									<fileset dir="${project.basedir}/frontend/build"/>
-								</copy>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+
 		</plugins>
 	</build>
 </project>
