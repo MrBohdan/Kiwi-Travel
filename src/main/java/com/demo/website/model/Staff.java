@@ -1,10 +1,10 @@
 package com.demo.website.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.lang.NonNull;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -12,10 +12,17 @@ import java.util.UUID;
 @Table(name = "staff")
 public class Staff {
 
-    @Id
+    @Id @NonNull
+    @Column(name = "id")
     private UUID uuid;
+    @NotBlank
+    @Column(name = "fullname")
     private String fullname;
+    @NotBlank
+    @Column(name = "username")
     private String username;
+    @NotBlank
+    @Column(name = "password")
     private String password;
 
     public Staff(@JsonProperty("id") UUID uuid,

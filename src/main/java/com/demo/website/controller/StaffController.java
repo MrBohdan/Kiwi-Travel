@@ -1,7 +1,7 @@
 package com.demo.website.controller;
 
 import com.demo.website.model.Staff;
-import com.demo.website.service.UserProfileServie;
+import com.demo.website.repository.StaffDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
@@ -12,34 +12,34 @@ import java.util.UUID;
 
 /**
  * The controller is used to handling HTTP requests for the application
- *
  */
 @RestController
-@RequestMapping("api/v1.0/")
+@RequestMapping("api/v1.0/staff/")
 //TODO
 @CrossOrigin("*") // should be defined
 public class StaffController {
 
     @Autowired
-    private UserProfileServie userProfileServie;
+    private StaffDao staffDao;
 
-    @PostMapping(path="/add") // Map ONLY POST Requests
-    public @ResponseBody int addNewUser (@RequestBody Staff staff) {
-        return userProfileServie.addUser(staff);
+    @PostMapping(path = "/add") // Map ONLY POST Requests
+    public @ResponseBody
+    int addNewUser(@RequestBody Staff staff) {
+        return staffDao.insertStaff(staff);
     }
 
-    @GetMapping(path="/get") // Map ONLY GET Requests
-    public List<Staff> getUsers(){
-       return userProfileServie.getAllUsers();
+    @GetMapping(path = "/get") // Map ONLY GET Requests
+    public List<Staff> getUsers() {
+        return staffDao.findAll();
     }
 
-    @DeleteMapping(path="/delete/{id}") // Map ONLY DELETE Requests
-    public int removeUserById(@PathVariable("id") UUID id){
-    return userProfileServie.removeUser(id);
+    @DeleteMapping(path = "/delete/{uuid}") // Map ONLY DELETE Requests
+    public int removeUserByUuid(@PathVariable("uuid") UUID uuid) {
+        return staffDao.deleteStaffByUuid(uuid);
     }
 
-    @PutMapping(path="/put/{id}") // Map ONLY PUT Requests
-    public int updateUserById(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Staff staff){
-        return userProfileServie.updateUser(id, staff);
+    @PutMapping(path = "/put/{id}") // Map ONLY PUT Requests
+    public int updateUserByUuid(@PathVariable("uuid") UUID uuid, @Valid @NonNull @RequestBody Staff staff) {
+        return staffDao.updateStaffByUuid(uuid, staff);
     }
 }

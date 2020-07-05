@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.UUID;
 
 @Repository("postgres")
-public class UserDataAccessService implements UserDao {
+public class StaffDaoImpl implements StaffDao {
 
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public UserDataAccessService(JdbcTemplate jdbcTemplate) {
+    public StaffDaoImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -34,7 +34,7 @@ public class UserDataAccessService implements UserDao {
     }
 
     @Override
-    public int insertUser(UUID id, Staff staff) {
+    public int insertStaff(UUID id, Staff staff) {
         String sql = "INSERT INTO staff (" +
                 "id," +
                 "fullname," +
@@ -49,13 +49,13 @@ public class UserDataAccessService implements UserDao {
     }
 
     @Override
-    public int deleteUserById(UUID id) {
+    public int deleteStaffByUuid(UUID id) {
         String sql = "DELETE FROM staff WHERE id=?";
         return jdbcTemplate.update(sql,id);
     }
 
     @Override
-    public int updateUserById(UUID id, Staff staff) {
+    public int updateStaffByUuid(UUID id, Staff staff) {
         String sql = "UPDATE staff SET fullname=?, username=?, password=? WHERE id=?";
         return jdbcTemplate.update(sql, staff.getFullname(),
                 staff.getUsername(),

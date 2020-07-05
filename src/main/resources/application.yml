@@ -1,7 +1,8 @@
 server:
   port: 8005
 
-# spring datasource properties
+# NOTE: use hierarchy structure
+# spring data source properties
 spring:
   datasource:
     jdbc-url: ${JDBC_DATABASE_URL}
@@ -13,10 +14,10 @@ spring:
     maxIdle: 5
     minIdle: 2
     initialSize: 5
+  jpa:
+    hibernate:
+      show-sql: true
+      open-in-view: false
+      generate-ddl: true
+      ddl-auto: create-drop
 
-jpa:
-  show-sql: trye
-  generate-ddl: true
-  hibernate:
-    ddl-auto: create
-    database: userdb

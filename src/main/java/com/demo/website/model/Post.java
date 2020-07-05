@@ -1,42 +1,64 @@
 package com.demo.website.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.UUID;
 
-@Entity
-@Table(name = "posts")
+@Entity(name = "post")
+@Table(name = "post")
 public class Post {
 
     @Id
-    private UUID idPost;
-
+    @Column(name = "post_Id")
+    @NonNull @NotEmpty
+    private UUID postId;
+    @NonNull @NotEmpty
+    @Column(name = "title")
     private String title;
+    @NonNull @NotEmpty
+    @Column(name = "description")
     private String description;
+    @NonNull @NotEmpty
+    @Column(name = "timestamp")
     private Timestamp timestamp;
+    @NonNull @NotEmpty
+    @Column(name = "staff_Id")
+    private UUID staff_Id;
 
-    public Post(@JsonProperty("id") UUID idPost,
+    public Post(@JsonProperty("post_Id") UUID postId,
                 @JsonProperty("title") String title,
                 @JsonProperty("description") String description,
-                @JsonProperty("timestamp") Timestamp timestamp) {
-        this.idPost = idPost;
+                @JsonProperty("timestamp") Timestamp timestamp,
+                @JsonProperty("staff_Id") UUID staffId) {
+        this.postId = postId;
         this.title = title;
         this.description = description;
         this.timestamp = timestamp;
+        this.staff_Id = staffId;
     }
 
     public Post() {
     }
 
-    public UUID getIdPost() {
-        return idPost;
+    public UUID getPostId() {
+        return postId;
     }
 
-    public void setIdPost(UUID idPost) {
-        this.idPost = idPost;
+    public void setPostId(UUID postId) {
+        this.postId = postId;
+    }
+
+    public UUID getStaffId() {
+        return staff_Id;
+    }
+
+    public void setStaffId(UUID staffId) {
+        this.staff_Id = staffId;
     }
 
     public String getTitle() {
@@ -68,7 +90,7 @@ public class Post {
         if (this == o) return true;
         if (!(o instanceof Post)) return false;
         Post post = (Post) o;
-        return idPost.equals(post.idPost) &&
+        return postId.equals(post.postId) &&
                 title.equals(post.title) &&
                 description.equals(post.description) &&
                 timestamp.equals(post.timestamp);
@@ -76,6 +98,6 @@ public class Post {
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPost, title, description, timestamp);
+        return Objects.hash(postId, title, description, timestamp);
     }
 }
