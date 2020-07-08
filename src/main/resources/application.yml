@@ -19,5 +19,5 @@ spring:
       show-sql: true
       open-in-view: false
       generate-ddl: true
-      ddl-auto: create-drop
+      ddl-auto: update
 

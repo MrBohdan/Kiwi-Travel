@@ -1,10 +1,8 @@
 package com.demo.website.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.sql.Timestamp;
 import java.util.Objects;
 import java.util.UUID;
@@ -14,32 +12,27 @@ import java.util.UUID;
 public class Post {
 
     @Id
-    @Column(name = "post_Id")
-    @NonNull @NotEmpty
+    @Column(name = "post_Id", unique = true, updatable = false, length = 36, nullable = false)
     private UUID postId;
-    @NonNull @NotEmpty
-    @Column(name = "title")
+    @Column(name = "title", nullable = false)
     private String title;
-    @NonNull @NotEmpty
-    @Column(name = "description")
+    @Column(name = "description", nullable = false)
     private String description;
-    @NonNull @NotEmpty
-    @Column(name = "timestamp")
+    @Column(name = "timestamp", nullable = false)
     private Timestamp timestamp;
-    @NonNull @NotEmpty
-    @Column(name = "staff_Id")
-    private UUID staff_Id;
+    @Column(name = "staff_Id", length = 36, nullable = false)
+    private UUID uuid;
 
     public Post(@JsonProperty("post_Id") UUID postId,
                 @JsonProperty("title") String title,
                 @JsonProperty("description") String description,
                 @JsonProperty("timestamp") Timestamp timestamp,
-                @JsonProperty("staff_Id") UUID staffId) {
+                @JsonProperty("staff_Id") UUID uuid) {
         this.postId = postId;
         this.title = title;
         this.description = description;
         this.timestamp = timestamp;
-        this.staff_Id = staffId;
+        this.uuid = uuid;
     }
 
     public Post() {
@@ -54,11 +47,11 @@ public class Post {
     }
 
     public UUID getStaffId() {
-        return staff_Id;
+        return uuid;
     }
 
     public void setStaffId(UUID staffId) {
-        this.staff_Id = staffId;
+        this.uuid = staffId;
     }
 
     public String getTitle() {

@@ -3,15 +3,16 @@ package com.demo.website.controller;
 import com.demo.website.model.Post;
 import com.demo.website.repository.PostsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "api/v1.0/post/")
 //TODO
-@CrossOrigin("*") // should be defined
+@CrossOrigin("*") // should be defined or not ?
 public class PostController {
 
     @Autowired
@@ -19,9 +20,8 @@ public class PostController {
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     public @ResponseBody
-    Post addPost(@RequestBody Post post) {
-        UUID id = UUID.randomUUID();
-        post.setPostId(id);
+    Post addPost(@Validated @NonNull @RequestBody Post post) {
+        post.setPostId(postsRepository.generateUUID());
         return postsRepository.save(post);
     }
 
