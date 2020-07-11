@@ -3429,10 +3429,10 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/logo.scss":
-/*!****************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/logo.scss ***!
-  \****************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/_home.scss":
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/_home.scss ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3440,17 +3440,17 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #313a46;\n  padding-top: 0.75rem;\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: lawngreen;\n}", ""]);
+exports.push([module.i, "body {\n  font-size: 0.875rem;\n}\n\n.feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  font-size: 1.3rem;\n  background-color: rgba(0, 0, 0, 0.25);\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  padding: 0.75rem 1rem;\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #313a46;\n  text-align: center;\n  font-weight: 900;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}\n\n.nav-link-color {\n  box-shadow: inset 5px 1px 0 rgba(0, 0, 0, 0.25);\n  background-color: #222f3e;\n}\n\n/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #313a46;\n  padding-top: 0.75rem;\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: lawngreen;\n}\n\n/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #313a46;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #fff !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n.sign-out .nav-item {\n  position: absolute;\n  bottom: 45px;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}\n/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n    justify-content: stretch;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 985px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/navbar.scss":
-/*!******************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/navbar.scss ***!
-  \******************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/post/scss/_home.scss":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/post/scss/_home.scss ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3458,61 +3458,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-size: 0.875rem;\n}\n\n.feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  font-size: 1.3rem;\n  background-color: rgba(0, 0, 0, 0.25);\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  padding: 0.75rem 1rem;\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #313a46;\n  text-align: center;\n  font-weight: 900;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/sidebar-min.scss":
-/*!***********************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/sidebar-min.scss ***!
-  \***********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, "/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.5rem;\n    font-weight: 500;\n    color: #fff !important;\n    justify-content: stretch;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 985px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.5rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/sidebar.scss":
-/*!*******************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/sidebar.scss ***!
-  \*******************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, "/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #313a46;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #fff !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/post/scss/card.scss":
-/*!*************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/post/scss/card.scss ***!
-  \*************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".card {\n  width: 18rem;\n}", ""]);
+exports.push([module.i, ".masonry {\n  display: grid;\n  grid-gap: 0.7rem;\n}\n\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 985px) {\n  .masonry {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .masonry-post {\n    position: relative;\n    border-radius: 5px;\n    overflow: hidden;\n    padding-top: 0.7rem;\n  }\n}\n.masonry-post {\n  position: relative;\n  border-radius: 5px;\n  overflow: hidden;\n}\n\n.card {\n  width: inherit;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -53924,19 +53870,13 @@ module.exports = g;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _scss_navbar_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scss/navbar.scss */ "./src/components/Sidebar/scss/navbar.scss");
-/* harmony import */ var _scss_navbar_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_navbar_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _scss_logo_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/logo.scss */ "./src/components/Sidebar/scss/logo.scss");
-/* harmony import */ var _scss_logo_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_logo_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _scss_sidebar_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/sidebar.scss */ "./src/components/Sidebar/scss/sidebar.scss");
-/* harmony import */ var _scss_sidebar_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scss_sidebar_scss__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _scss_sidebar_min_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/sidebar-min.scss */ "./src/components/Sidebar/scss/sidebar-min.scss");
-/* harmony import */ var _scss_sidebar_min_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_scss_sidebar_min_scss__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/bs */ "./node_modules/react-icons/bs/index.esm.js");
-/* harmony import */ var react_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons */ "./node_modules/react-icons/lib/esm/index.js");
-/* harmony import */ var _post_js_Post__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../post/js/Post */ "./src/components/post/js/Post.js");
-/* harmony import */ var _dashboard_js_Dashboard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../dashboard/js/Dashboard */ "./src/components/dashboard/js/Dashboard.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scss/_home.scss */ "./src/components/Sidebar/scss/_home.scss");
+/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_home_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_icons_bs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/bs */ "./node_modules/react-icons/bs/index.esm.js");
+/* harmony import */ var react_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons */ "./node_modules/react-icons/lib/esm/index.js");
+/* harmony import */ var _post_js_Post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../post/js/Post */ "./src/components/post/js/Post.js");
+/* harmony import */ var _dashboard_js_Dashboard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../dashboard/js/Dashboard */ "./src/components/dashboard/js/Dashboard.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -53958,9 +53898,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
 
 
 
@@ -54004,7 +53941,7 @@ var HorizontalSidebar = /*#__PURE__*/function (_Component) {
         "aria-label": "Toggle navigation"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "navbar-toggler-icon"
-      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container-fluid"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -54016,39 +53953,37 @@ var HorizontalSidebar = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav flex-column"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item"
+        className: "nav-item nav-link-color"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
         href: "/dashboard"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_6__["IconContext"].Provider, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_3__["IconContext"].Provider, {
         value: {
           size: "1.4em"
         }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_5__["BsHouseDoor"], null))), "Dashboard", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_2__["BsHouseDoor"], null))), "Dashboard", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item"
+        className: "nav-item nav-link-color"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
         href: "/posts"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_6__["IconContext"].Provider, {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_3__["IconContext"].Provider, {
         value: {
           size: "1.4em"
         }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_5__["BsPencilSquare"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        "data-feather": "file"
-      }), "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_2__["BsPencilSquare"], null))), "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-out"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "nav-item text-nowrap fixed-bottom"
+        className: "nav-item"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-link",
         href: "/logout"
-      }, "Sign out")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+      }, "Sign out")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
         path: "/dashboard"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_js_Dashboard__WEBPACK_IMPORTED_MODULE_8__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_9__["Route"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_js_Dashboard__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
         path: "/posts"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_js_Post__WEBPACK_IMPORTED_MODULE_7__["default"], null)))))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_js_Post__WEBPACK_IMPORTED_MODULE_4__["default"], null)))))));
     }
   }]);
 
@@ -54059,92 +53994,14 @@ var HorizontalSidebar = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./src/components/Sidebar/scss/logo.scss":
-/*!***********************************************!*\
-  !*** ./src/components/Sidebar/scss/logo.scss ***!
-  \***********************************************/
+/***/ "./src/components/Sidebar/scss/_home.scss":
+/*!************************************************!*\
+  !*** ./src/components/Sidebar/scss/_home.scss ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./logo.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/logo.scss");
-
-if (typeof content === 'string') content = [[module.i, content, '']];
-var transform;
-var insertInto;
-var options = {
-  "hmr": true
-};
-options.transform = transform;
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if (content.locals) module.exports = content.locals;
-
-if (false) {}
-
-/***/ }),
-
-/***/ "./src/components/Sidebar/scss/navbar.scss":
-/*!*************************************************!*\
-  !*** ./src/components/Sidebar/scss/navbar.scss ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./navbar.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/navbar.scss");
-
-if (typeof content === 'string') content = [[module.i, content, '']];
-var transform;
-var insertInto;
-var options = {
-  "hmr": true
-};
-options.transform = transform;
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if (content.locals) module.exports = content.locals;
-
-if (false) {}
-
-/***/ }),
-
-/***/ "./src/components/Sidebar/scss/sidebar-min.scss":
-/*!******************************************************!*\
-  !*** ./src/components/Sidebar/scss/sidebar-min.scss ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./sidebar-min.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/sidebar-min.scss");
-
-if (typeof content === 'string') content = [[module.i, content, '']];
-var transform;
-var insertInto;
-var options = {
-  "hmr": true
-};
-options.transform = transform;
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if (content.locals) module.exports = content.locals;
-
-if (false) {}
-
-/***/ }),
-
-/***/ "./src/components/Sidebar/scss/sidebar.scss":
-/*!**************************************************!*\
-  !*** ./src/components/Sidebar/scss/sidebar.scss ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./sidebar.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/sidebar.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./_home.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/Sidebar/scss/_home.scss");
 
 if (typeof content === 'string') content = [[module.i, content, '']];
 var transform;
@@ -54243,8 +54100,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _scss_card_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/card.scss */ "./src/components/post/scss/card.scss");
-/* harmony import */ var _scss_card_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_card_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/_home.scss */ "./src/components/post/scss/_home.scss");
+/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_home_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54285,6 +54143,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var PostsUtill = function PostsUtill() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -54307,27 +54166,12 @@ var PostsUtill = function PostsUtill() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     fetchPosts();
   }, []);
-  return postsUtill.map(function (postsUtill, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: index
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "card"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      className: "card-img-top",
-      src: "...",
-      alt: "Card image cap"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "card-body"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-      className: "card-title"
-    }, postsUtill.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "card-text"
-    }, postsUtill.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      className: "card-text"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-      className: "text-muted"
-    }, " ", postsUtill.timestamp)))));
-  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "container-post"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_3__["PostMansonry"], {
+    postsUtill: postsUtill,
+    columns: 3
+  }));
 };
 
 var Post = /*#__PURE__*/function (_Component) {
@@ -54362,14 +54206,114 @@ var Post = /*#__PURE__*/function (_Component) {
 
 /***/ }),
 
-/***/ "./src/components/post/scss/card.scss":
-/*!********************************************!*\
-  !*** ./src/components/post/scss/card.scss ***!
-  \********************************************/
+/***/ "./src/components/post/js/index.js":
+/*!*****************************************!*\
+  !*** ./src/components/post/js/index.js ***!
+  \*****************************************/
+/*! exports provided: PostMansonry, MasonryPost */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _post_mansonry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./post-mansonry */ "./src/components/post/js/post-mansonry.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostMansonry", function() { return _post_mansonry__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _masonry_post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./masonry-post */ "./src/components/post/js/masonry-post.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MasonryPost", function() { return _masonry_post__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/components/post/js/masonry-post.js":
+/*!************************************************!*\
+  !*** ./src/components/post/js/masonry-post.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MasonryPost; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function truncateWithEllipses(text, max) {
+  return text.substr(0, max - 1) + (text.length > max ? '...' : '');
+}
+
+function MasonryPost(_ref) {
+  var postsUtill = _ref.postsUtill;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "masonry-post"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "card-img-top",
+    src: "...",
+    alt: "Card image cap"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    className: "card-title"
+  }, postsUtill.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, " ", truncateWithEllipses(postsUtill.description, 260)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-muted"
+  }, " ", postsUtill.zonedDateTime)))));
+}
+
+/***/ }),
+
+/***/ "./src/components/post/js/post-mansonry.js":
+/*!*************************************************!*\
+  !*** ./src/components/post/js/post-mansonry.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PostMansonry; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
+
+
+function PostMansonry(_ref) {
+  var postsUtill = _ref.postsUtill,
+      columns = _ref.columns;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "masonry",
+    style: {
+      gridTemplateColumns: "repeat(".concat(columns, ", minmax(275px, 1fr))")
+    }
+  }, postsUtill.sort(function (a, b) {
+    return a.zonedDateTime < b.zonedDateTime ? 1 : -1;
+  }).map(function (postsUtill, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_1__["MasonryPost"], {
+      postsUtill: postsUtill,
+      index: index,
+      key: index
+    });
+  }));
+}
+
+/***/ }),
+
+/***/ "./src/components/post/scss/_home.scss":
+/*!*********************************************!*\
+  !*** ./src/components/post/scss/_home.scss ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./card.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/post/scss/card.scss");
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./_home.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/post/scss/_home.scss");
 
 if (typeof content === 'string') content = [[module.i, content, '']];
 var transform;
@@ -54469,7 +54413,7 @@ var Index = /*#__PURE__*/function (_Component) {
   return Index;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.StrictMode, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Index, null)), document.getElementById('index')); // If you want your app to work offline and load faster, you can change
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.StrictMode, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Sidebar_js_HorizontalSidebar__WEBPACK_IMPORTED_MODULE_9__["default"], null)), document.getElementById('index')); // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 

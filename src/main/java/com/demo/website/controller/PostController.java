@@ -22,6 +22,7 @@ public class PostController {
     public @ResponseBody
     Post addPost(@Validated @NonNull @RequestBody Post post) {
         post.setPostId(postsRepository.generateUUID());
+        post.setZonedDateTime(postsRepository.timeWithTimeZoneUtil());
         return postsRepository.save(post);
     }
 

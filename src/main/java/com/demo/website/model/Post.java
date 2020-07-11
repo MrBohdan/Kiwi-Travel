@@ -3,7 +3,7 @@ package com.demo.website.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -16,22 +16,22 @@ public class Post {
     private UUID postId;
     @Column(name = "title", nullable = false)
     private String title;
-    @Column(name = "description", nullable = false)
+    @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
-    @Column(name = "timestamp", nullable = false)
-    private Timestamp timestamp;
+    @Column(name = "zonedDateTime", nullable = false, columnDefinition= "TIMESTAMP WITH TIME ZONE")
+    private ZonedDateTime zonedDateTime;
     @Column(name = "staff_Id", length = 36, nullable = false)
     private UUID uuid;
 
     public Post(@JsonProperty("post_Id") UUID postId,
                 @JsonProperty("title") String title,
                 @JsonProperty("description") String description,
-                @JsonProperty("timestamp") Timestamp timestamp,
+                @JsonProperty("zonedDateTime") ZonedDateTime zonedDateTime,
                 @JsonProperty("staff_Id") UUID uuid) {
         this.postId = postId;
         this.title = title;
         this.description = description;
-        this.timestamp = timestamp;
+        this.zonedDateTime = zonedDateTime;
         this.uuid = uuid;
     }
 
@@ -70,12 +70,12 @@ public class Post {
         this.description = description;
     }
 
-    public Timestamp getTimestamp() {
-        return timestamp;
+    public ZonedDateTime getZonedDateTime() {
+        return zonedDateTime;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+    public void setZonedDateTime(ZonedDateTime zonedDateTime) {
+        this.zonedDateTime = zonedDateTime;
     }
 
     @Override
@@ -83,14 +83,15 @@ public class Post {
         if (this == o) return true;
         if (!(o instanceof Post)) return false;
         Post post = (Post) o;
-        return postId.equals(post.postId) &&
-                title.equals(post.title) &&
-                description.equals(post.description) &&
-                timestamp.equals(post.timestamp);
+        return Objects.equals(postId, post.postId) &&
+                Objects.equals(title, post.title) &&
+                Objects.equals(description, post.description) &&
+                Objects.equals(zonedDateTime, post.zonedDateTime) &&
+                Objects.equals(uuid, post.uuid);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(postId, title, description, timestamp);
+        return Objects.hash(postId, title, description, zonedDateTime, uuid);
     }
 }
