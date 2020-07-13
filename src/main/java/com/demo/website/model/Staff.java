@@ -5,7 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.UUID;
-
+/**
+ * JPA Annotated Pojo that represents a staff.
+ *
+ * @author Bohdan Skrypnyk
+ */
 @Entity
 @Table(name = "staff")
 public class Staff {

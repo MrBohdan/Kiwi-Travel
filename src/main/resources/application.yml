@@ -20,4 +20,10 @@ spring:
       open-in-view: false
       generate-ddl: true
       ddl-auto: update
+      temp:
+        use_jdbc_metadata_defaults: false
+  http:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 20MB
 

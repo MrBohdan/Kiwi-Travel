@@ -34,12 +34,12 @@ public class StaffController {
     }
 
     @DeleteMapping(path = "/delete/{uuid}") // Map ONLY DELETE Requests
-    public int removeUserByUuid(@PathVariable("uuid") UUID uuid) {
+    public int removeStaffByUuid(@PathVariable("uuid") UUID uuid) {
         return staffDao.deleteStaffByUuid(uuid);
     }
 
     @PutMapping(path = "/put/{id}") // Map ONLY PUT Requests
-    public int updateUserByUuid(@PathVariable("uuid") UUID uuid, @Valid @NonNull @RequestBody Staff staff) {
+    public int updateStaffByUuid(@PathVariable("uuid") UUID uuid, @Valid @NonNull @RequestBody Staff staff) {
         return staffDao.updateStaffByUuid(uuid, staff);
     }
 }

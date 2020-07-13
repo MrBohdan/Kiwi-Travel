@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.time.ZonedDateTime;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -14,6 +15,9 @@ public class Post {
     @Id
     @Column(name = "post_Id", unique = true, updatable = false, length = 36, nullable = false)
     private UUID postId;
+    @Lob
+    @Column(name = "image", nullable = false)
+    private byte[] image;
     @Column(name = "title", nullable = false)
     private String title;
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
@@ -24,11 +28,13 @@ public class Post {
     private UUID uuid;
 
     public Post(@JsonProperty("post_Id") UUID postId,
+                @JsonProperty("image") byte[] image,
                 @JsonProperty("title") String title,
                 @JsonProperty("description") String description,
                 @JsonProperty("zonedDateTime") ZonedDateTime zonedDateTime,
                 @JsonProperty("staff_Id") UUID uuid) {
         this.postId = postId;
+        this.image = image;
         this.title = title;
         this.description = description;
         this.zonedDateTime = zonedDateTime;
@@ -78,12 +84,21 @@ public class Post {
         this.zonedDateTime = zonedDateTime;
     }
 
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Post)) return false;
         Post post = (Post) o;
         return Objects.equals(postId, post.postId) &&
+                Arrays.equals(image, post.image) &&
                 Objects.equals(title, post.title) &&
                 Objects.equals(description, post.description) &&
                 Objects.equals(zonedDateTime, post.zonedDateTime) &&
@@ -92,6 +107,8 @@ public class Post {
 
     @Override
     public int hashCode() {
-        return Objects.hash(postId, title, description, zonedDateTime, uuid);
+        int result = Objects.hash(postId, title, description, zonedDateTime, uuid);
+        result = 31 * result + Arrays.hashCode(image);
+        return result;
     }
 }
