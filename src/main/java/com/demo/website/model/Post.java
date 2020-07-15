@@ -15,7 +15,6 @@ public class Post {
     @Id
     @Column(name = "post_Id", unique = true, updatable = false, length = 36, nullable = false)
     private UUID postId;
-    @Lob
     @Column(name = "image", nullable = false)
     private byte[] image;
     @Column(name = "title", nullable = false)
