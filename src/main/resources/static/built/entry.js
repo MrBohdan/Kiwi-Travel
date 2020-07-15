@@ -3440,7 +3440,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-size: 0.875rem;\n}\n\n.feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  font-size: 1.3rem;\n  background-color: rgba(0, 0, 0, 0.25);\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  padding: 0.75rem 1rem;\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #313a46;\n  text-align: center;\n  font-weight: 900;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}\n\n.nav-link-color {\n  box-shadow: inset 5px 1px 0 rgba(0, 0, 0, 0.25);\n  background-color: #222f3e;\n}\n\n/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #313a46;\n  padding-top: 0.75rem;\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: lawngreen;\n}\n\n/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #313a46;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #fff !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n.sign-out .nav-item {\n  position: absolute;\n  bottom: 45px;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}\n/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n    justify-content: stretch;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 985px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}", ""]);
+exports.push([module.i, "body {\n  font-size: 0.875rem;\n}\n\n.feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  font-size: 1.3rem;\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  padding: 0.75rem 1rem;\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #313a46;\n  text-align: center;\n  font-weight: 900;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}\n\n.nav-link-color {\n  box-shadow: 0px -7px 20px 0px rgba(0, 0, 0, 0.25);\n  background-color: #222f3e;\n}\n\n/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #313a46;\n  padding-top: 0.75rem;\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: lawngreen;\n}\n\n/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #313a46;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #fff !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n.sign-out .nav-item {\n  position: absolute;\n  bottom: 45px;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}\n/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n    justify-content: stretch;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 985px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -53877,6 +53877,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_js_Post__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../post/js/Post */ "./src/components/post/js/Post.js");
 /* harmony import */ var _dashboard_js_Dashboard__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../dashboard/js/Dashboard */ "./src/components/dashboard/js/Dashboard.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
@@ -53885,74 +53906,89 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class HorizontalSidebar extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-      className: "navbar navbar-color navbar-dark sticky-top flex-md-nowrap p-0 shadow"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "navbar-logo-set navbar-brand col-lg-2 mr-0 px-3 noselect"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "border-bottom logo-set"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "logo-color"
-    }, "KIWI"), " TRAVEL ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "sr-only"
-    }), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      className: "navbar-toggler position-absolute d-md-none collapsed",
-      type: "button",
-      "data-toggle": "collapse",
-      "data-target": "#sidebarMenu",
-      "aria-controls": "sidebarMenu",
-      "aria-expanded": "false",
-      "aria-label": "Toggle navigation"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "navbar-toggler-icon"
-    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "container-fluid"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "row"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-      id: "sidebarMenu",
-      className: "col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "sidebar-sticky pt-3"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-      className: "nav flex-column"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      className: "nav-item nav-link-color"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "nav-link",
-      href: "/dashboard"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_3__["IconContext"].Provider, {
-      value: {
-        size: "1.4em"
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_2__["BsHouseDoor"], null))), "Dashboard", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-      className: "sr-only"
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      className: "nav-item nav-link-color"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "nav-link",
-      href: "/posts"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_3__["IconContext"].Provider, {
-      value: {
-        size: "1.4em"
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_2__["BsPencilSquare"], null))), "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "sign-out"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-      className: "nav-item"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      className: "nav-link",
-      href: "/logout"
-    }, "Sign out")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
-      path: "/dashboard"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_js_Dashboard__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
-      path: "/posts"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_js_Post__WEBPACK_IMPORTED_MODULE_4__["default"], null)))))));
+
+var HorizontalSidebar = /*#__PURE__*/function (_Component) {
+  _inherits(HorizontalSidebar, _Component);
+
+  var _super = _createSuper(HorizontalSidebar);
+
+  function HorizontalSidebar() {
+    _classCallCheck(this, HorizontalSidebar);
+
+    return _super.apply(this, arguments);
   }
 
-}
+  _createClass(HorizontalSidebar, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "navbar navbar-color navbar-dark sticky-top flex-md-nowrap p-0 shadow"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-logo-set navbar-brand col-lg-2 mr-0 px-3 noselect"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "border-bottom logo-set"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "logo-color"
+      }, "KIWI"), " TRAVEL ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "sr-only"
+      }), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "navbar-toggler position-absolute d-md-none collapsed",
+        type: "button",
+        "data-toggle": "collapse",
+        "data-target": "#sidebarMenu",
+        "aria-controls": "sidebarMenu",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "navbar-toggler-icon"
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["BrowserRouter"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container-fluid"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        id: "sidebarMenu",
+        className: "col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sidebar-sticky pt-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "nav flex-column"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item nav-link-color"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "/dashboard"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_3__["IconContext"].Provider, {
+        value: {
+          size: "1.4em"
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_2__["BsHouseDoor"], null))), "Dashboard", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "sr-only"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item nav-link-color"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "/posts"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons__WEBPACK_IMPORTED_MODULE_3__["IconContext"].Provider, {
+        value: {
+          size: "1.4em"
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_2__["BsPencilSquare"], null))), "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sign-out"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "nav-item"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-link",
+        href: "/logout"
+      }, "Sign out")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+        path: "/dashboard"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_dashboard_js_Dashboard__WEBPACK_IMPORTED_MODULE_5__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__["Route"], {
+        path: "/posts"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_post_js_Post__WEBPACK_IMPORTED_MODULE_4__["default"], null)))))));
+    }
+  }]);
+
+  return HorizontalSidebar;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (HorizontalSidebar);
 
@@ -53995,24 +54031,57 @@ if (false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
-class Dashboard extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-      role: "main",
-      className: "main-block col-md-9 ml-sm-auto col-lg-10 px-md-4",
-      "xmlns:th": "http://www.thymeleaf.org"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-      className: "h3 noselect"
-    }, "Dashboard")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-      "th:text": "'Hello, ' + ${name} + '!'"
-    }));
+
+var Dashboard = /*#__PURE__*/function (_Component) {
+  _inherits(Dashboard, _Component);
+
+  var _super = _createSuper(Dashboard);
+
+  function Dashboard() {
+    _classCallCheck(this, Dashboard);
+
+    return _super.apply(this, arguments);
   }
 
-}
+  _createClass(Dashboard, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+        role: "main",
+        className: "main-block col-md-9 ml-sm-auto col-lg-10 px-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "h3 noselect"
+      }, "Dashboard")));
+    }
+  }]);
+
+  return Dashboard;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 
@@ -54034,30 +54103,79 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/_home.scss */ "./src/components/post/scss/_home.scss");
 /* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_home_scss__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
-/* 'axsion' connect HTTP request with backend*/
+
+/* 'axios' connect HTTP request with backend*/
 
 
 
 
-const PostsUtill = () => {
-  const [postsUtill, setPosts] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+var PostsUtill = function PostsUtill() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      postsUtill = _useState2[0],
+      setPosts = _useState2[1];
 
-  const fetchPosts = () => {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("api/v1.0/post/get").then(response => {
+  var fetchPosts = function fetchPosts() {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("api/v1.0/post/get").then(function (response) {
       console.log(response);
       setPosts(response.data);
     }).catch(function (error) {
       if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
         console.log(error.response.data);
         console.log(error.response.status);
         console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
       }
+
+      console.log(error.config);
     });
   };
 
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     fetchPosts();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
@@ -54068,19 +54186,33 @@ const PostsUtill = () => {
   }));
 };
 
-class Post extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-      role: "main",
-      className: "main-block col-md-9 ml-sm-auto col-lg-10 px-md-4"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-      className: "h3 noselect"
-    }, "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostsUtill, null));
+var Post = /*#__PURE__*/function (_Component) {
+  _inherits(Post, _Component);
+
+  var _super = _createSuper(Post);
+
+  function Post() {
+    _classCallCheck(this, Post);
+
+    return _super.apply(this, arguments);
   }
 
-}
+  _createClass(Post, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+        role: "main",
+        className: "main-block col-md-9 ml-sm-auto col-lg-10 px-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "h3 noselect"
+      }, "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostsUtill, null));
+    }
+  }]);
+
+  return Post;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Post);
 
@@ -54125,16 +54257,15 @@ function truncateWithEllipses(text, max) {
   return text.substr(0, max - 1) + (text.length > max ? '...' : '');
 }
 
-function MasonryPost({
-  postsUtill
-}) {
+function MasonryPost(_ref) {
+  var postsUtill = _ref.postsUtill;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "masonry-post"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "card-img-top",
-    src: `data:image/jpeg;base64,${postsUtill.image}`,
+    src: "data:image/jpeg;base64,".concat(postsUtill.image),
     alt: "Card image cap"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "card-body"
@@ -54166,20 +54297,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
 
 
-function PostMansonry({
-  postsUtill,
-  columns
-}) {
+function PostMansonry(_ref) {
+  var postsUtill = _ref.postsUtill,
+      columns = _ref.columns;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "masonry",
     style: {
-      gridTemplateColumns: `repeat(${columns}, minmax(275px, 1fr))`
+      gridTemplateColumns: "repeat(".concat(columns, ", minmax(275px, 1fr))")
     }
-  }, postsUtill.sort((a, b) => a.zonedDateTime < b.zonedDateTime ? 1 : -1).map((postsUtill, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_1__["MasonryPost"], {
-    postsUtill,
-    index,
-    key: index
-  })));
+  }, postsUtill.sort(function (a, b) {
+    return a.zonedDateTime < b.zonedDateTime ? 1 : -1;
+  }).map(function (postsUtill, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_1__["MasonryPost"], {
+      postsUtill: postsUtill,
+      index: index,
+      key: index
+    });
+  }));
 }
 
 /***/ }),
@@ -54237,6 +54371,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_js_dist_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! bootstrap/js/dist/button */ "./node_modules/bootstrap/js/dist/button.js");
 /* harmony import */ var bootstrap_js_dist_button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(bootstrap_js_dist_button__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _components_Sidebar_js_HorizontalSidebar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Sidebar/js/HorizontalSidebar */ "./src/components/Sidebar/js/HorizontalSidebar.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
@@ -54248,12 +54403,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class Index extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
-  render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "This is will be Main page"));
+
+var Index = /*#__PURE__*/function (_Component) {
+  _inherits(Index, _Component);
+
+  var _super = _createSuper(Index);
+
+  function Index() {
+    _classCallCheck(this, Index);
+
+    return _super.apply(this, arguments);
   }
 
-}
+  _createClass(Index, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "This is will be Main page"));
+    }
+  }]);
+
+  return Index;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.StrictMode, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Sidebar_js_HorizontalSidebar__WEBPACK_IMPORTED_MODULE_9__["default"], null)), document.getElementById('index')); // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
@@ -54283,23 +54453,23 @@ __webpack_require__.r(__webpack_exports__);
 // resources are updated in the background.
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
-const isLocalhost = Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
+var isLocalhost = Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
 window.location.hostname === '[::1]' || // 127.0.0.0/8 are considered localhost for IPv4.
 window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
 function register(config) {
-  if (false) {}
+  if (false) { var publicUrl; }
 }
 
 function registerValidSW(swUrl, config) {
-  navigator.serviceWorker.register(swUrl).then(registration => {
-    registration.onupdatefound = () => {
-      const installingWorker = registration.installing;
+  navigator.serviceWorker.register(swUrl).then(function (registration) {
+    registration.onupdatefound = function () {
+      var installingWorker = registration.installing;
 
       if (installingWorker == null) {
         return;
       }
 
-      installingWorker.onstatechange = () => {
+      installingWorker.onstatechange = function () {
         if (installingWorker.state === 'installed') {
           if (navigator.serviceWorker.controller) {
             // At this point, the updated precached content has been fetched,
@@ -54323,7 +54493,7 @@ function registerValidSW(swUrl, config) {
         }
       };
     };
-  }).catch(error => {
+  }).catch(function (error) {
     console.error('Error during service worker registration:', error);
   });
 }
@@ -54334,14 +54504,14 @@ function checkValidServiceWorker(swUrl, config) {
     headers: {
       'Service-Worker': 'script'
     }
-  }).then(response => {
+  }).then(function (response) {
     // Ensure service worker exists, and that we really are getting a JS file.
-    const contentType = response.headers.get('content-type');
+    var contentType = response.headers.get('content-type');
 
     if (response.status === 404 || contentType != null && contentType.indexOf('javascript') === -1) {
       // No service worker found. Probably a different app. Reload the page.
-      navigator.serviceWorker.ready.then(registration => {
-        registration.unregister().then(() => {
+      navigator.serviceWorker.ready.then(function (registration) {
+        registration.unregister().then(function () {
           window.location.reload();
         });
       });
@@ -54349,16 +54519,16 @@ function checkValidServiceWorker(swUrl, config) {
       // Service worker found. Proceed as normal.
       registerValidSW(swUrl, config);
     }
-  }).catch(() => {
+  }).catch(function () {
     console.log('No internet connection found. App is running in offline mode.');
   });
 }
 
 function unregister() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+    navigator.serviceWorker.ready.then(function (registration) {
       registration.unregister();
-    }).catch(error => {
+    }).catch(function (error) {
       console.error(error.message);
     });
   }
