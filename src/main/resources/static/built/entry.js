@@ -3440,7 +3440,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-size: 0.875rem;\n}\n\n.feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-top: 0.75rem;\n  padding-bottom: 0.75rem;\n  font-size: 1.3rem;\n  background-color: rgba(0, 0, 0, 0.25);\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  padding: 0.75rem 1rem;\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #313a46;\n  text-align: center;\n  font-weight: 900;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}\n\n.nav-link-color {\n  box-shadow: 0px -7px 20px 0px rgba(0, 0, 0, 0.25);\n  background-color: #222f3e;\n}\n\n/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #313a46;\n  padding-top: 0.75rem;\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: lawngreen;\n}\n\n/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #313a46;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #fff !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n.sign-out .nav-item {\n  position: absolute;\n  bottom: 45px;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}\n/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n    justify-content: stretch;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 985px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}", ""]);
+exports.push([module.i, "body {\n  font-size: 0.875rem;\n}\n\n.feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-bottom: 0.75rem;\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #313a46;\n  text-align: center;\n  font-weight: 800;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}\n\n.nav-link-color {\n  box-shadow: inset 0px 0px 8px 3px rgba(0, 0, 0, 0.25);\n  background-color: #222f3e;\n}\n\n/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #313a46;\n  padding-top: 0.7rem;\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: lawngreen;\n}\n\n/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #313a46;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #fff !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n.sign-out .nav-item {\n  position: absolute;\n  bottom: 45px;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}\n/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n    justify-content: stretch;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 991px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 1040px) {\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -3458,7 +3458,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".masonry {\n  display: grid;\n  grid-gap: 0.7rem;\n}\n\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 985px) {\n  .masonry {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .masonry-post {\n    position: relative;\n    border-radius: 5px;\n    overflow: hidden;\n    padding-top: 0.7rem;\n  }\n}\n.masonry-post {\n  position: relative;\n  border-radius: 5px;\n  overflow: hidden;\n}\n\n.card {\n  width: inherit;\n}", ""]);
+exports.push([module.i, ".masonry {\n  display: grid;\n  grid-gap: 0.7rem;\n}\n\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 991px) {\n  .masonry {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .masonry-post {\n    position: relative;\n    border-radius: 5px;\n    overflow: hidden;\n    padding-top: 0.7rem;\n  }\n}\n.masonry-post {\n  position: relative;\n  border-radius: 5px;\n  overflow: hidden;\n}\n\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 1040px) {\n  .masonry {\n    display: flex;\n    flex-direction: column;\n  }\n\n  .masonry-post {\n    position: relative;\n    border-radius: 5px;\n    overflow: hidden;\n    padding-top: 0.7rem;\n  }\n}\n.masonry-post {\n  position: relative;\n  border-radius: 5px;\n  overflow: hidden;\n}\n\n.card {\n  width: inherit;\n}\n\n.btn-position {\n  padding-block-start: initial;\n  box-shadow: 4px 5px 6px 4px rgba(0, 0, 0, 0.1);\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -54098,11 +54098,9 @@ var Dashboard = /*#__PURE__*/function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../scss/_home.scss */ "./src/components/post/scss/_home.scss");
-/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scss_home_scss__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
+/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scss/_home.scss */ "./src/components/post/scss/_home.scss");
+/* harmony import */ var _scss_home_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_home_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54125,6 +54123,289 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+var Post = /*#__PURE__*/function (_Component) {
+  _inherits(Post, _Component);
+
+  var _super = _createSuper(Post);
+
+  function Post() {
+    var _this;
+
+    _classCallCheck(this, Post);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      open: false
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onOpenModal", function () {
+      _this.setState({
+        open: true
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onCloseModal", function () {
+      _this.setState({
+        open: false
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(Post, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+        role: "main",
+        className: "main-block col-md-9 ml-sm-auto col-lg-10 px-md-4"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "h3 noselect"
+      }, "Posts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "btn-position"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "btn btn-success",
+        onClick: this.onOpenModal
+      }, "Create record"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_2__["Modal"], {
+        className: "modal",
+        show: this.state.isShowing,
+        close: this.closeModalHandler
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_2__["PostsGetUtill"], null));
+    }
+  }]);
+
+  return Post;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Post);
+
+/***/ }),
+
+/***/ "./src/components/post/js/index.js":
+/*!*****************************************!*\
+  !*** ./src/components/post/js/index.js ***!
+  \*****************************************/
+/*! exports provided: PostMansonry, MasonryPost, PostsGetUtill, Modal, PostsDeleteUtill */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _post_mansonry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./post-mansonry */ "./src/components/post/js/post-mansonry.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostMansonry", function() { return _post_mansonry__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+/* harmony import */ var _masonry_post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./masonry-post */ "./src/components/post/js/masonry-post.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MasonryPost", function() { return _masonry_post__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+/* harmony import */ var _posts_get_utill__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./posts-get-utill */ "./src/components/post/js/posts-get-utill.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostsGetUtill", function() { return _posts_get_utill__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal */ "./src/components/post/js/modal.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Modal", function() { return _modal__WEBPACK_IMPORTED_MODULE_3__["default"]; });
+
+/* harmony import */ var _post_delete_utill__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post-delete-utill */ "./src/components/post/js/post-delete-utill.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostsDeleteUtill", function() { return _post_delete_utill__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+
+
+
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/components/post/js/masonry-post.js":
+/*!************************************************!*\
+  !*** ./src/components/post/js/masonry-post.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MasonryPost; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
+
+
+
+function truncateWithEllipses(text, max) {
+  return text.substr(0, max - 1) + (text.length > max ? '...' : '');
+}
+
+function MasonryPost(_ref) {
+  var posts = _ref.posts,
+      index = _ref.index;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    key: index,
+    className: "masonry-post"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    className: "card-img-top",
+    src: "data:image/jpeg;base64,".concat(posts.image),
+    alt: "Card image cap"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "card-body"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+    className: "card-title"
+  }, posts.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, " ", truncateWithEllipses(posts.description, 260)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "card-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
+    className: "text-muted"
+  }, " ", posts.zonedDateTime)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    type: "button",
+    onClick: function onClick(e) {
+      return Object(___WEBPACK_IMPORTED_MODULE_1__["PostsDeleteUtill"])(posts, posts.post_Id, index);
+    },
+    className: "btn btn-danger"
+  }, "Delete")))));
+}
+
+/***/ }),
+
+/***/ "./src/components/post/js/modal.js":
+/*!*****************************************!*\
+  !*** ./src/components/post/js/modal.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var modal = function modal(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (modal);
+
+/***/ }),
+
+/***/ "./src/components/post/js/post-delete-utill.js":
+/*!*****************************************************!*\
+  !*** ./src/components/post/js/post-delete-utill.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+var _this = undefined;
+
+
+
+/* 'axios' connect HTTP request with backend*/
+
+var PostsDeleteUtill = function PostsDeleteUtill(posts, post_Id, index, e) {
+  axios__WEBPACK_IMPORTED_MODULE_1___default.a.delete("api/v1.0/post/delete/".concat(post_Id)).then(function (response) {
+    var post = response.data;
+
+    _this.setState({
+      post: post
+    });
+
+    console.log(response.data);
+  }).catch(function (error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (error.request) {
+      // The request was made but no response was received
+      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+      // http.ClientRequest in node.js
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log('Error', error.message);
+    }
+
+    console.log(error.config);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (PostsDeleteUtill);
+
+/***/ }),
+
+/***/ "./src/components/post/js/post-mansonry.js":
+/*!*************************************************!*\
+  !*** ./src/components/post/js/post-mansonry.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PostMansonry; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
+
+
+function PostMansonry(_ref) {
+  var posts = _ref.posts,
+      columns = _ref.columns;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+    className: "masonry",
+    style: {
+      gridTemplateColumns: "repeat(".concat(columns, ", minmax(275px, 1fr))")
+    }
+  }, posts.sort(function (a, b) {
+    return a.zonedDateTime < b.zonedDateTime ? 1 : -1;
+  }).map(function (posts, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_1__["MasonryPost"], {
+      posts: posts,
+      index: index,
+      key: index
+    });
+  }));
+}
+
+/***/ }),
+
+/***/ "./src/components/post/js/posts-get-utill.js":
+/*!***************************************************!*\
+  !*** ./src/components/post/js/posts-get-utill.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! . */ "./src/components/post/js/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -54143,16 +54424,15 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-var PostsUtill = function PostsUtill() {
+var PostsGetUtill = function PostsGetUtill() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
-      postsUtill = _useState2[0],
+      posts = _useState2[0],
       setPosts = _useState2[1];
 
   var fetchPosts = function fetchPosts() {
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("api/v1.0/post/get").then(function (response) {
-      console.log(response);
+      console.log(response.data);
       setPosts(response.data);
     }).catch(function (error) {
       if (error.response) {
@@ -54180,141 +54460,13 @@ var PostsUtill = function PostsUtill() {
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "container-post"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_3__["PostMansonry"], {
-    postsUtill: postsUtill,
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_2__["PostMansonry"], {
+    posts: posts,
     columns: 3
   }));
 };
 
-var Post = /*#__PURE__*/function (_Component) {
-  _inherits(Post, _Component);
-
-  var _super = _createSuper(Post);
-
-  function Post() {
-    _classCallCheck(this, Post);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(Post, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-        role: "main",
-        className: "main-block col-md-9 ml-sm-auto col-lg-10 px-md-4"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "h3 noselect"
-      }, "Posts")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PostsUtill, null));
-    }
-  }]);
-
-  return Post;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (Post);
-
-/***/ }),
-
-/***/ "./src/components/post/js/index.js":
-/*!*****************************************!*\
-  !*** ./src/components/post/js/index.js ***!
-  \*****************************************/
-/*! exports provided: PostMansonry, MasonryPost */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _post_mansonry__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./post-mansonry */ "./src/components/post/js/post-mansonry.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostMansonry", function() { return _post_mansonry__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-/* harmony import */ var _masonry_post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./masonry-post */ "./src/components/post/js/masonry-post.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MasonryPost", function() { return _masonry_post__WEBPACK_IMPORTED_MODULE_1__["default"]; });
-
-
-
-
-
-/***/ }),
-
-/***/ "./src/components/post/js/masonry-post.js":
-/*!************************************************!*\
-  !*** ./src/components/post/js/masonry-post.js ***!
-  \************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MasonryPost; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function truncateWithEllipses(text, max) {
-  return text.substr(0, max - 1) + (text.length > max ? '...' : '');
-}
-
-function MasonryPost(_ref) {
-  var postsUtill = _ref.postsUtill;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "masonry-post"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    className: "card-img-top",
-    src: "data:image/jpeg;base64,".concat(postsUtill.image),
-    alt: "Card image cap"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-    className: "card-title"
-  }, postsUtill.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "card-text"
-  }, " ", truncateWithEllipses(postsUtill.description, 260)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "card-text"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", {
-    className: "text-muted"
-  }, " ", postsUtill.zonedDateTime)))));
-}
-
-/***/ }),
-
-/***/ "./src/components/post/js/post-mansonry.js":
-/*!*************************************************!*\
-  !*** ./src/components/post/js/post-mansonry.js ***!
-  \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PostMansonry; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var ___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ */ "./src/components/post/js/index.js");
-
-
-function PostMansonry(_ref) {
-  var postsUtill = _ref.postsUtill,
-      columns = _ref.columns;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-    className: "masonry",
-    style: {
-      gridTemplateColumns: "repeat(".concat(columns, ", minmax(275px, 1fr))")
-    }
-  }, postsUtill.sort(function (a, b) {
-    return a.zonedDateTime < b.zonedDateTime ? 1 : -1;
-  }).map(function (postsUtill, index) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_1__["MasonryPost"], {
-      postsUtill: postsUtill,
-      index: index,
-      key: index
-    });
-  }));
-}
+/* harmony default export */ __webpack_exports__["default"] = (PostsGetUtill);
 
 /***/ }),
 
