@@ -54330,7 +54330,7 @@ var PostsDeleteUtill = function PostsDeleteUtill(posts, post_Id, index, e) {
       post: post
     });
 
-    console.log(response.data);
+    console.log("response.data : " + response.data);
   }).catch(function (error) {
     if (error.response) {
       // The request was made and the server responded with a status code
