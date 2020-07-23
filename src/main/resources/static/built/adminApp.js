@@ -3440,7 +3440,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-size: 0.875rem;\n}\n\n.feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-bottom: 0.75rem;\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #313a46;\n  text-align: center;\n  font-weight: 800;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}\n\n.nav-link-color {\n  box-shadow: inset 0px 0px 8px 3px rgba(0, 0, 0, 0.25);\n  background-color: #222f3e;\n}\n\n/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #313a46;\n  padding-top: 0.7rem;\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: lawngreen;\n}\n\n/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #313a46;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #fff !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n.sign-out .nav-item {\n  position: absolute;\n  bottom: 45px;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}\n/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n    justify-content: stretch;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 991px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 1040px) {\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #fff !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}", ""]);
+exports.push([module.i, ".feather {\n  width: 16px;\n  height: 16px;\n  vertical-align: text-bottom;\n}\n\n/*\n * Navbar\n * response for the navbar with logo\n */\n.navbar-brand {\n  padding-bottom: 0.75rem;\n}\n\n.navbar .navbar-toggler {\n  top: 0.25rem;\n  right: 1rem;\n}\n\n.navbar {\n  border-width: 0;\n  border-radius: 0;\n}\n\n/*\n * navbar settings\n */\n.sticky-top {\n  height: 1.2rem;\n}\n\n/*\n * disable 'user-select' for the text\n */\n.noselect {\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Safari */\n  -khtml-user-select: none;\n  /* Konqueror HTML */\n  -moz-user-select: none;\n  /* Old versions of Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */\n}\n\n/* logo div and nav bar settings */\n.navbar-color {\n  background-color: #FEDBD0;\n  text-align: center;\n  font-weight: 800;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: inherit;\n}\n\n.nav-link-color {\n  background-color: #FEEAE6;\n}\n\n/*\n * logo div settings\n */\n.navbar-logo-set {\n  background-color: #FEDBD0;\n  padding-top: 0.7rem;\n}\n\n.logo-set {\n  padding: 20px 0 0 0;\n}\n\n.logo-color {\n  color: #442C2E !important;\n}\n\n/*\n * Sidebar\n */\n.sidebar {\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 100;\n  /* Behind the navbar */\n  padding: 43px 0 0;\n  /* Height of navbar */\n  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);\n}\n\n.sidebar-sticky {\n  top: 0;\n  background-color: #FEEAE6;\n  position: relative;\n  height: calc(100vh - 0px);\n  padding-top: 0.5rem;\n  overflow-x: hidden;\n  overflow-y: auto;\n  /* Scrollable contents if viewport is shorter than content. */\n}\n\n/*\n* sidebar font settings\n*/\n.sidebar .nav-link {\n  bottom: 0px;\n  font-style: normal;\n  font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n  font-size: 1rem;\n  font-weight: 500;\n  color: #442C2E !important;\n}\n\n.sidebar .nav-link .feather {\n  margin-right: 4px;\n  color: #999;\n}\n\n.sidebar .nav-link.active {\n  color: #007bff;\n}\n\n.sidebar .nav-link:hover .feather,\n.sidebar .nav-link.active .feather {\n  color: inherit;\n}\n\n/* icons in a table */\n.sidebar i {\n  padding-right: 0.75rem;\n}\n\n/* setting for the '<i>' text in the sidebar table*/\n.flex-column i {\n  vertical-align: text-bottom;\n}\n\n.sign-out .nav-item {\n  position: absolute;\n  bottom: 45px;\n}\n\n.border-bottom {\n  border-bottom: 1px solid #442C2E !important;\n}\n\n@media (max-width: 767.98px) {\n  .sidebar {\n    top: 1rem;\n  }\n}\n@supports (position: -webkit-sticky) or (position: sticky) {\n  .sidebar-sticky {\n    position: -webkit-sticky;\n    position: sticky;\n  }\n}\n/* setting for the main block for mobile*/\n@media all and (max-width: 765px) {\n  .main-block {\n    margin-top: 25px;\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #442C2E !important;\n    justify-content: stretch;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 991px) {\n  .main-block {\n    padding-top: 25px;\n  }\n\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1.2rem;\n    font-weight: 500;\n    color: #442C2E !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\n/* setting for the main block for small resolutions*/\n@media all and (max-width: 1040px) {\n  .sidebar .nav-link {\n    bottom: 0px;\n    font-style: normal;\n    font-family: Cambria, Cochin, Georgia, Times, \"Times New Roman\", serif;\n    font-size: 1rem;\n    font-weight: 500;\n    color: #442C2E !important;\n  }\n\n  .sign-out .nav-item {\n    position: absolute;\n    bottom: 60px;\n  }\n}\nbody {\n  margin: 0;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #442c2e;\n  text-align: left;\n  background-color: #fff;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -53974,7 +53974,7 @@ var HorizontalSidebar = /*#__PURE__*/function (_Component) {
         className: "border-bottom logo-set"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "logo-color"
-      }, "KIWI"), " TRAVEL ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+      }, "KIWI TRAVEL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "sr-only"
       }), " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "navbar-toggler position-absolute d-md-none collapsed",
@@ -54230,7 +54230,7 @@ var Post = /*#__PURE__*/function (_Component) {
         className: "modal",
         show: this.state.isShowing,
         close: this.closeModalHandler
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_2__["PostsGetUtill"], null));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_2__["PostsGetUtil"], null));
     }
   }]);
 
@@ -54245,7 +54245,7 @@ var Post = /*#__PURE__*/function (_Component) {
 /*!*****************************************!*\
   !*** ./src/components/post/js/index.js ***!
   \*****************************************/
-/*! exports provided: PostMansonry, MasonryPost, PostsGetUtill, Modal, PostsDeleteUtill */
+/*! exports provided: PostMansonry, MasonryPost, PostsGetUtil, Modal, PostsDeleteUtil */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54256,14 +54256,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _masonry_post__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./masonry-post */ "./src/components/post/js/masonry-post.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "MasonryPost", function() { return _masonry_post__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
-/* harmony import */ var _posts_get_utill__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./posts-get-utill */ "./src/components/post/js/posts-get-utill.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostsGetUtill", function() { return _posts_get_utill__WEBPACK_IMPORTED_MODULE_2__["default"]; });
+/* harmony import */ var _posts_get_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./posts-get-util */ "./src/components/post/js/posts-get-util.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostsGetUtil", function() { return _posts_get_util__WEBPACK_IMPORTED_MODULE_2__["default"]; });
 
 /* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modal */ "./src/components/post/js/modal.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "Modal", function() { return _modal__WEBPACK_IMPORTED_MODULE_3__["default"]; });
 
-/* harmony import */ var _post_delete_utill__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post-delete-utill */ "./src/components/post/js/post-delete-utill.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostsDeleteUtill", function() { return _post_delete_utill__WEBPACK_IMPORTED_MODULE_4__["default"]; });
+/* harmony import */ var _post_delete_util__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post-delete-util */ "./src/components/post/js/post-delete-util.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "PostsDeleteUtil", function() { return _post_delete_util__WEBPACK_IMPORTED_MODULE_4__["default"]; });
 
 
 
@@ -54296,6 +54296,7 @@ function truncateWithEllipses(text, max) {
 
 function MasonryPost(_ref) {
   var posts = _ref.posts,
+      handleRemovePost = _ref.handleRemovePost,
       index = _ref.index;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     key: index,
@@ -54319,7 +54320,7 @@ function MasonryPost(_ref) {
   }, " ", posts.zonedDateTime)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     type: "button",
     onClick: function onClick(e) {
-      return Object(___WEBPACK_IMPORTED_MODULE_1__["PostsDeleteUtill"])(posts, posts.post_Id, index);
+      return Object(___WEBPACK_IMPORTED_MODULE_1__["PostsDeleteUtil"])(posts.post_Id, handleRemovePost);
     },
     className: "btn btn-danger"
   }, "Delete")))));
@@ -54348,10 +54349,10 @@ var modal = function modal(props) {
 
 /***/ }),
 
-/***/ "./src/components/post/js/post-delete-utill.js":
-/*!*****************************************************!*\
-  !*** ./src/components/post/js/post-delete-utill.js ***!
-  \*****************************************************/
+/***/ "./src/components/post/js/post-delete-util.js":
+/*!****************************************************!*\
+  !*** ./src/components/post/js/post-delete-util.js ***!
+  \****************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -54361,43 +54362,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-var _this = undefined;
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
 
 /* 'axios' connect HTTP request with backend*/
 
-var PostsDeleteUtill = function PostsDeleteUtill(posts, post_Id, index, e) {
-  axios__WEBPACK_IMPORTED_MODULE_1___default.a.delete("api/v1.0/post/delete/".concat(post_Id)).then(function (response) {
-    var post = response.data;
+var PostsDeleteUtil = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(post_Id, handleRemovePost) {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            axios__WEBPACK_IMPORTED_MODULE_1___default.a.delete("api/v1.0/post/delete/".concat(post_Id)).then(function (response) {
+              console.log(response);
+              handleRemovePost(post_Id);
+            }).catch(function (error) {
+              if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+              } else if (error.request) {
+                // The request was made but no response was received
+                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                // http.ClientRequest in node.js
+                console.log(error.request);
+              } else {
+                // Something happened in setting up the request that triggered an Error
+                console.log('Error', error.message);
+              }
 
-    _this.setState({
-      post: post
-    });
+              console.log('error config', error.config);
+            });
 
-    console.log("response.data : " + response.data);
-  }).catch(function (error) {
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
-    } else if (error.request) {
-      // The request was made but no response was received
-      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-      // http.ClientRequest in node.js
-      console.log(error.request);
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      console.log('Error', error.message);
-    }
+          case 1:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
 
-    console.log(error.config);
-  });
-};
+  return function PostsDeleteUtil(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
 
-/* harmony default export */ __webpack_exports__["default"] = (PostsDeleteUtill);
+/* harmony default export */ __webpack_exports__["default"] = (PostsDeleteUtil);
 
 /***/ }),
 
@@ -54418,7 +54433,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function PostMansonry(_ref) {
   var posts = _ref.posts,
-      columns = _ref.columns;
+      columns = _ref.columns,
+      handleRemovePost = _ref.handleRemovePost;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "masonry",
     style: {
@@ -54429,7 +54445,7 @@ function PostMansonry(_ref) {
   }).map(function (posts, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_1__["MasonryPost"], {
       posts: posts,
-      index: index,
+      handleRemovePost: handleRemovePost,
       key: index
     });
   }));
@@ -54437,10 +54453,10 @@ function PostMansonry(_ref) {
 
 /***/ }),
 
-/***/ "./src/components/post/js/posts-get-utill.js":
-/*!***************************************************!*\
-  !*** ./src/components/post/js/posts-get-utill.js ***!
-  \***************************************************/
+/***/ "./src/components/post/js/posts-get-util.js":
+/*!**************************************************!*\
+  !*** ./src/components/post/js/posts-get-util.js ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -54469,7 +54485,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var PostsGetUtill = function PostsGetUtill() {
+var PostsGetUtil = function PostsGetUtil() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
       posts = _useState2[0],
@@ -54503,15 +54519,24 @@ var PostsGetUtill = function PostsGetUtill() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     fetchPosts();
   }, []);
+
+  var handleRemovePost = function handleRemovePost(postID) {
+    var filteredPosts = posts.filter(function (post) {
+      return post.post_Id !== postID;
+    });
+    setPosts(filteredPosts);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
     className: "container-post"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(___WEBPACK_IMPORTED_MODULE_2__["PostMansonry"], {
     posts: posts,
-    columns: 3
+    columns: 3,
+    handleRemovePost: handleRemovePost
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (PostsGetUtill);
+/* harmony default export */ __webpack_exports__["default"] = (PostsGetUtil);
 
 /***/ }),
 

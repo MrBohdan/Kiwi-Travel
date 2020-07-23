@@ -33,12 +33,12 @@ public class PostController {
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     @ResponseBody
-    public Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException {
+    public Post addPost(@RequestParam("image") MultipartFile image, @Validated @NonNull @ModelAttribute Post post) throws IOException {
 
-        isFileEmpty(file);
-        isImage(file);
+        isFileEmpty(image);
+        isImage(image);
 
-        post.setImage(file.getBytes());
+        post.setImage(image.getBytes());
         post.setPostId(postsRepository.generateUUID());
         post.setZonedDateTime(postsRepository.timeWithTimeZoneUtil());
         return postsRepository.save(post);
@@ -54,15 +54,15 @@ public class PostController {
         postsRepository.deleteById(post_Id);
     }
 
-    public void isFileEmpty(MultipartFile file){
-        if(file.isEmpty()){
-            throw new IllegalStateException("Cannot upload empty file [" + file.getSize()+"]");
+    public void isFileEmpty(MultipartFile image){
+        if(image.isEmpty()){
+            throw new IllegalStateException("Cannot upload empty file [" + image.getSize()+"]");
         }
     }
 
-    public void isImage(MultipartFile file){
-        if(!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(file.getContentType())){
-            throw new IllegalStateException("File must be an image [" + file.getContentType() + "]");
+    public void isImage(MultipartFile image){
+        if(!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(image.getContentType())){
+            throw new IllegalStateException("File must be an image [" + image.getContentType() + "]");
         }
     }
 }
