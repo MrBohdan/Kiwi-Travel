@@ -14,9 +14,9 @@ import java.util.UUID;
 
 import static org.apache.http.entity.ContentType.*;
 
-@Repository("postgresPost")
-public class PostDaoImpl implements PostDao{
-
+/*@Repository("postgresPost")*/
+public class PostDaoImpl /*implements PostDao*/{
+    /*
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
@@ -72,5 +72,5 @@ public class PostDaoImpl implements PostDao{
         if (!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(file.getContentType())) {
             throw new IllegalStateException("File must be an image [" + file.getContentType() + "]");
         }
-    }
+    }*/
 }

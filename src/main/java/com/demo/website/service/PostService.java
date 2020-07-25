@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+/*@Service*/
 public class PostService {
-
+    /*
     private PostDao postDao;
 
     @Autowired
@@ -24,7 +24,7 @@ public class PostService {
 
     public List<Post> getAllPost() {
         return postDao.findAll();
-    }
+    }*/
 
 
 }
