@@ -60,6 +60,7 @@ public class PostController {
     }
 
     @GetMapping(value = "/get") // Map ONLY GET Requests
+    @Transactional
     public @ResponseBody
     void findAllPost() {
         try (Stream<Post> postStream = postsRepository.findAllPost()) {
