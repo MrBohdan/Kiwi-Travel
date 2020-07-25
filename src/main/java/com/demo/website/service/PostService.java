@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/*@Service*/
+@Service
 public class PostService {
 
-    /*private PostDao postDao;
+    private PostDao postDao;
 
     @Autowired
     public PostService(@Qualifier("postgresPost") PostDao postDao) {
@@ -24,7 +24,7 @@ public class PostService {
 
     public List<Post> getAllPost() {
         return postDao.findAll();
-    }*/
+    }
 
 
 }

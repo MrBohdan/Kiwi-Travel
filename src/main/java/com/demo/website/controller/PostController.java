@@ -21,13 +21,13 @@ import static org.apache.http.entity.ContentType.*;
  *
  * @author Bohdan Skrypnyk
  */
-@RestController
+/*@RestController
 @RequestMapping(value = "api/v1.0/post/")
 //TODO
-@CrossOrigin("*") // should be defined or not ?
+@CrossOrigin("*") // should be defined or not ?*/
 public class PostController {
 
-    @Autowired
+    /*@Autowired
     private PostsRepository postsRepository;
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
@@ -63,5 +63,5 @@ public class PostController {
         if(!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(file.getContentType())){
             throw new IllegalStateException("File must be an image [" + file.getContentType() + "]");
         }
-    }
+    }*/
 }

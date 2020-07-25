@@ -15,13 +15,13 @@ import java.util.List;
 
 import static org.apache.http.entity.ContentType.*;
 
-/*@RestController
+@RestController
 @RequestMapping(value = "api/v1.0/post/")
 //TODO
-@CrossOrigin("*") // should be defined or not ?*/
+@CrossOrigin("*") // should be defined or not ?
 public class PController {
 
-   /* @Autowired
+    @Autowired
     private PostDao postDao;
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
@@ -51,5 +51,5 @@ public class PController {
         if (!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(file.getContentType())) {
             throw new IllegalStateException("File must be an image [" + file.getContentType() + "]");
         }
-    }*/
+    }
 }
