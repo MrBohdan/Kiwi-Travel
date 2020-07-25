@@ -52,6 +52,18 @@ public class Post {
         this.uuid = uuid;
     }
 
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postId=" + postId +
+                ", image=" + Arrays.toString(image) +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", zonedDateTime=" + zonedDateTime +
+                ", uuid=" + uuid +
+                '}';
+    }
+
     public Post() {
     }
 
