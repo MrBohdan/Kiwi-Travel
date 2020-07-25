@@ -40,29 +40,6 @@ public class Post {
         this.uuid = uuid;
     }
 
-    public Post(@JsonProperty("post_Id") UUID postId,
-                @JsonProperty("image") byte[] image,
-                @JsonProperty("title") String title,
-                @JsonProperty("description") String description,
-                @JsonProperty("staff_Id") UUID uuid) {
-        this.postId = postId;
-        this.image = image;
-        this.title = title;
-        this.description = description;
-        this.uuid = uuid;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "postId=" + postId +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", zonedDateTime=" + zonedDateTime +
-                ", uuid=" + uuid +
-                '}';
-    }
-
     public Post() {
     }
 
@@ -133,4 +110,16 @@ public class Post {
         result = 31 * result + Arrays.hashCode(image);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "postId=" + postId +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", zonedDateTime=" + zonedDateTime +
+                ", uuid=" + uuid +
+                '}';
+    }
+
 }
