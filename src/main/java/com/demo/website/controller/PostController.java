@@ -13,8 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import static org.apache.http.entity.ContentType.IMAGE_JPEG;
-import static org.apache.http.entity.ContentType.IMAGE_PNG;
+import static org.apache.http.entity.ContentType.*;
 
 
 /**
@@ -22,13 +21,13 @@ import static org.apache.http.entity.ContentType.IMAGE_PNG;
  *
  * @author Bohdan Skrypnyk
  */
-@RestController
+/*@RestController
 @RequestMapping(value = "api/v1.0/post/")
 //TODO
-@CrossOrigin("*") // should be defined or not ?
+@CrossOrigin("*") // should be defined or not ?*/
 public class PostController {
 
-    @Autowired
+    /*@Autowired
     private PostsRepository postsRepository;
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
@@ -40,7 +39,7 @@ public class PostController {
 
         post.setImage(file.getBytes());
         post.setPostId(postsRepository.generateUUID());
-        post.setZonedDateTime(postsRepository.timeWithTimeZoneUtil());
+        post.setZonedDateTime(postsRepository.generateZonedDateTimeUtil());
         return postsRepository.save(post);
     }
 
@@ -64,5 +63,5 @@ public class PostController {
         if(!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(file.getContentType())){
             throw new IllegalStateException("File must be an image [" + file.getContentType() + "]");
         }
-    }
+    }*/
 }

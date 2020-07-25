@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.UUID;
 
-@Repository("postgres")
+@Repository("postgres_Staff")
 public class StaffDaoImpl implements StaffDao {
 
     private final JdbcTemplate jdbcTemplate;

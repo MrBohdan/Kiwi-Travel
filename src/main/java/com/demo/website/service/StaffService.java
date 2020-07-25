@@ -15,7 +15,7 @@ public class StaffService {
     private StaffDao staffDao;
 
     @Autowired
-    public StaffService(@Qualifier("postgres") StaffDao staffDao) {
+    public StaffService(@Qualifier("postgres_Staff") StaffDao staffDao) {
         this.staffDao = staffDao;
     }
 

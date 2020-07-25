@@ -21,7 +21,7 @@ public class Post {
     private String title;
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
-    @Column(name = "zonedDateTime", nullable = false, columnDefinition= "TIMESTAMP WITH TIME ZONE")
+    @Column(name = "zonedDateTime", columnDefinition= "TIMESTAMP WITH TIME ZONE")
     private ZonedDateTime zonedDateTime;
     @Column(name = "staff_Id", length = 36, nullable = false)
     private UUID uuid;
@@ -37,6 +37,18 @@ public class Post {
         this.title = title;
         this.description = description;
         this.zonedDateTime = zonedDateTime;
+        this.uuid = uuid;
+    }
+
+    public Post(@JsonProperty("post_Id") UUID postId,
+                @JsonProperty("image") byte[] image,
+                @JsonProperty("title") String title,
+                @JsonProperty("description") String description,
+                @JsonProperty("staff_Id") UUID uuid) {
+        this.postId = postId;
+        this.image = image;
+        this.title = title;
+        this.description = description;
         this.uuid = uuid;
     }
 

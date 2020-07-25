@@ -2,9 +2,9 @@ package com.demo.website.util;
 
 import java.time.ZonedDateTime;
 
-public interface TimeWithTimeZoneUtil {
+public interface GenerateZonedDateTimeUtil {
 
-    default ZonedDateTime timeWithTimeZoneUtil(){
+    default ZonedDateTime generateZonedDateTimeUtil(){
         return ZonedDateTime.now();
     }
 }
