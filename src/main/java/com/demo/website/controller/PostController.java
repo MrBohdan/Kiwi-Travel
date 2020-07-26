@@ -2,6 +2,7 @@ package com.demo.website.controller;
 
 import com.demo.website.model.Post;
 import com.demo.website.repository.PostsRepository;
+import org.hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.transaction.annotation.Transactional;
@@ -53,17 +54,21 @@ public class PostController {
     @GetMapping(value = "/get") // Map ONLY GET Requests
     @Transactional
     public @ResponseBody
-    Post findAllPost() {
-        ArrayDeque<Post> postArrayDeque = new ArrayDeque<>();
-        try (Stream<Post> postStream = postsRepository.findAllPost()) {
-            postStream.forEach(post -> {
-                postArrayDeque.add(post);
-                System.out.println(post.toString());
-                entityManager.detach(post);
-            });
+    void findAllPost() {
+        StatelessSession session = ((Session) entityManager.getDelegate()).getSessionFactory().openStatelessSession();
+
+        Query query = session
+                .createQuery("select p from post p");
+        query.setFetchSize(Integer.valueOf(10));
+        query.setReadOnly(true);
+        query.setLockMode("a", LockMode.NONE);
+        ScrollableResults results = query.scroll(ScrollMode.FORWARD_ONLY);
+        while (results.next()) {
+            Post addr = (Post) results.get(0);
+            System.out.println(addr.toString());
         }
-        System.out.println("return");
-        return postArrayDeque.pop();
+        results.close();
+        session.close();
     }
 
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
