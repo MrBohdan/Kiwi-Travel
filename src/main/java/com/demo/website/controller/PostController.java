@@ -62,12 +62,14 @@ public class PostController {
     @GetMapping(value = "/get") // Map ONLY GET Requests
     @Transactional
     public @ResponseBody
-    Stream<Post> findAllPost() {
-        try (Stream<Post> postStream = postsRepository.findAllPost()) {
-            return postStream;
-           /* postStream.forEach(post -> {
+    void findAllPost() {
+      try(Stream<Post> postStream = postsRepository.findAllPost()) {
+
+
+            postStream.forEach(post -> {
+                System.out.println(post.toString());
                 entityManager.detach(post);
-            });*/
+            });
         }
     }
 
