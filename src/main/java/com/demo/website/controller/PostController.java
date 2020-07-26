@@ -52,8 +52,12 @@ public class PostController {
 
      @GetMapping(value = "/get") // Map ONLY GET Requests
      public @ResponseBody
-     Page<Post> findAll(Pageable pageable){
-         return postsRepository.findAll(pageable);
+     List<Post> findAll(Pageable pageable){
+         return  entityManager.createQuery(
+                 "select p " +
+                         "from post p", Post.class)
+                 .setMaxResults(10)
+                 .getResultList();
      }
 
 
