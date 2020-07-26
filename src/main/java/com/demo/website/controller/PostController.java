@@ -53,13 +53,17 @@ public class PostController {
     @GetMapping(value = "/get") // Map ONLY GET Requests
     @Transactional
     public @ResponseBody
-    void findAllPost() {
+    Post findAllPost() {
+        ArrayDeque<Post> postArrayDeque = new ArrayDeque<>();
         try (Stream<Post> postStream = postsRepository.findAllPost()) {
             postStream.forEach(post -> {
+                postArrayDeque.add(post);
                 System.out.println(post.toString());
                 entityManager.detach(post);
             });
         }
+        System.out.println("return");
+        return postArrayDeque.pop();
     }
 
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
