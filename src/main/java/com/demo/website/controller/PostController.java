@@ -2,25 +2,16 @@ package com.demo.website.controller;
 
 import com.demo.website.model.Post;
 import com.demo.website.repository.PostsRepository;
-import org.hibernate.Session;
-import org.hibernate.jpa.QueryHints;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.lang.NonNull;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.thymeleaf.expression.Lists;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.awt.print.Book;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Stream;
 
 import static org.apache.http.entity.ContentType.*;
@@ -63,9 +54,7 @@ public class PostController {
     @Transactional
     public @ResponseBody
     void findAllPost() {
-      try(Stream<Post> postStream = postsRepository.findAllPost()) {
-
-
+        try (Stream<Post> postStream = postsRepository.findAllPost()) {
             postStream.forEach(post -> {
                 System.out.println(post.toString());
                 entityManager.detach(post);

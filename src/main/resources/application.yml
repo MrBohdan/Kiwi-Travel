@@ -15,8 +15,8 @@ spring:
     minIdle: 2
     initialSize: 5
   jpa:
+    show-sql: true
     hibernate:
-      show-sql: true
       open-in-view: false
       generate-ddl: true
       ddl-auto: update

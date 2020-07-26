@@ -23,7 +23,7 @@ import static org.hibernate.jpa.QueryHints.*;
 @Transactional
 public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuidUtil, GenerateZonedDateTimeUtil {
 
-    @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "5"))
+    @QueryHints(value = @QueryHint(name = HINT_FETCH_SIZE, value = "20"))
     @Query("select p from post p")
     Stream<Post> findAllPost();
 }
