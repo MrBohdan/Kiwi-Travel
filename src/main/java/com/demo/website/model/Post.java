@@ -21,7 +21,7 @@ public class Post {
     private String title;
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
-    @Column(name = "zonedDateTime", columnDefinition= "TIMESTAMP WITH TIME ZONE")
+    @Column(name = "zonedDateTime", nullable = false, columnDefinition= "TIMESTAMP WITH TIME ZONE")
     private ZonedDateTime zonedDateTime;
     @Column(name = "staff_Id", length = 36, nullable = false)
     private UUID uuid;
