@@ -40,7 +40,6 @@ public class PostController {
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     @ResponseBody
     public Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException {
-
         isFileEmpty(file);
         isImage(file);
 
@@ -52,14 +51,9 @@ public class PostController {
 
      @GetMapping(value = "/get") // Map ONLY GET Requests
      public @ResponseBody
-     List<Post> findAll(Pageable pageable){
-         return  entityManager.createQuery(
-                 "select p " +
-                         "from post p", Post.class)
-                 .setMaxResults(10)
-                 .getResultList();
+     List<Post> findAll(){
+         return postsRepository.findAll();
      }
-
 
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
     public void removePostByPostId(@PathVariable("post_Id") UUID post_Id) {
