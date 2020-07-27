@@ -3,6 +3,8 @@ package com.demo.website.repository;
 import com.demo.website.model.Post;
 import com.demo.website.util.GenerateUuidUtil;
 import com.demo.website.util.GenerateZonedDateTimeUtil;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +16,5 @@ import java.util.UUID;
 @Repository
 public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuidUtil, GenerateZonedDateTimeUtil {
 
-    //Page<Post> findAll(Pageable pageable);
+    Page<Post> findAll(Pageable pageable);
 }

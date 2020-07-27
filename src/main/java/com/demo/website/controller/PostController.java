@@ -3,6 +3,8 @@ package com.demo.website.controller;
 import com.demo.website.model.Post;
 import com.demo.website.repository.PostsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -44,8 +46,8 @@ public class PostController {
 
     @GetMapping(value = "/get") // Map ONLY GET Requests
     public @ResponseBody
-    List<Post> findAll() {
-        return postsRepository.findAll();
+    Page<Post>  findAll(Pageable pageable) {
+        return postsRepository.findAll(pageable);
     }
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
     public void removePostByPostId(@PathVariable("post_Id") UUID post_Id) {
