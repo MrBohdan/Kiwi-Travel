@@ -40,6 +40,19 @@ public class Post {
         this.uuid = uuid;
     }
 
+    public Post(@JsonProperty("post_Id") UUID postId,
+                @JsonProperty("title") String title,
+                @JsonProperty("description") String description,
+                @JsonProperty("zonedDateTime") ZonedDateTime zonedDateTime,
+                @JsonProperty("staff_Id") UUID uuid) {
+        this.postId = postId;
+        this.title = title;
+        this.description = description;
+        this.zonedDateTime = zonedDateTime;
+        this.uuid = uuid;
+    }
+
+
     public Post() {
     }
 
