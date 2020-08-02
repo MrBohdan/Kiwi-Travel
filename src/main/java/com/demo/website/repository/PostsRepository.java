@@ -18,10 +18,12 @@ import java.util.UUID;
 public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuidUtil, GenerateZonedDateTimeUtil {
 
     @Query("SELECT new com.demo.website.model.Post(p.postId AS post_Id, " +
+            "p.thumbnails as thumbnails, " +
             "p.title as title, " +
             "p.description AS description, " +
             "p.zonedDateTime AS zonedDateTime, " +
             "p.uuid AS staff_Id" +
-            ") FROM post p ORDER BY p.zonedDateTime ASC")
+            ") FROM post p " +
+            "ORDER BY p.zonedDateTime ASC")
     Page<Post> findAll(Pageable pageable);
 }

@@ -3,7 +3,9 @@ package com.demo.website.controller;
 import com.demo.website.model.Post;
 import com.demo.website.repository.PostsRepository;
 import net.coobird.thumbnailator.Thumbnails;
-import net.coobird.thumbnailator.name.Rename;
+import net.coobird.thumbnailator.geometry.Positions;
+import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
+import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,7 +14,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -32,6 +38,7 @@ public class PostController {
 
     @Autowired
     private PostsRepository postsRepository;
+
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     @ResponseBody
     public Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException {
@@ -39,20 +46,27 @@ public class PostController {
         isImage(file);
         isImageSizeExceed(file);
 
-
-        /*Thumbnails.of(file.getInputStream())
-                .size(640, 480)
-                .outputFormat("jpg");*/
-
         post.setImage(file.getBytes());
+
+        //BufferedImage thumbnail = ImageIO.read(new ByteArrayInputStream(file.getBytes()));
+        //Thumbnails.Builder builder = Thumbnails.of(thumbnail).size(250, 250);
+        post.setThumbnails(createThumbnail(file,600).toByteArray());
         post.setPostId(postsRepository.generateUUID());
         post.setZonedDateTime(postsRepository.generateZonedDateTimeUtil());
         return postsRepository.save(post);
     }
 
+    private ByteArrayOutputStream createThumbnail(MultipartFile file, Integer width) throws IOException{
+        ByteArrayOutputStream thumbOutput = new ByteArrayOutputStream();
+        BufferedImage img = ImageIO.read(file.getInputStream());
+        BufferedImage thumbImg = Scalr.resize(img, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, width, Scalr.OP_ANTIALIAS);
+        ImageIO.write(thumbImg, file.getContentType().split("/")[1] , thumbOutput);
+        return thumbOutput;
+    }
+
     @GetMapping(value = "/get") // Map ONLY GET Requests
     public @ResponseBody
-    Page<Post>  findAll(Pageable pageable) {
+    Page<Post> findAll(Pageable pageable) {
         return postsRepository.findAll(pageable);
     }
 
