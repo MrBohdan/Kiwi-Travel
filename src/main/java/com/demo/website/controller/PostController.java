@@ -43,21 +43,10 @@ public class PostController {
         isImageSizeExceed(file);
 
         post.setImage(file.getBytes());
-
-        //BufferedImage thumbnail = ImageIO.read(new ByteArrayInputStream(file.getBytes()));
-        //Thumbnails.Builder builder = Thumbnails.of(thumbnail).size(250, 250);
         post.setThumbnails(createThumbnail(file,600).toByteArray());
         post.setPostId(postsRepository.generateUUID());
         post.setZonedDateTime(postsRepository.generateZonedDateTimeUtil());
         return postsRepository.save(post);
-    }
-
-    private ByteArrayOutputStream createThumbnail(MultipartFile file, Integer width) throws IOException{
-        ByteArrayOutputStream thumbOutput = new ByteArrayOutputStream();
-        BufferedImage img = ImageIO.read(file.getInputStream());
-        BufferedImage thumbImg = Scalr.resize(img, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, width, Scalr.OP_ANTIALIAS);
-        ImageIO.write(thumbImg, file.getContentType().split("/")[1] , thumbOutput);
-        return thumbOutput;
     }
 
     @GetMapping(value = "/get") // Map ONLY GET Requests
@@ -87,5 +76,13 @@ public class PostController {
         if (file.getSize() > 20 * 1024 * 1024) {
             throw new IllegalStateException("Image size cannot exceed 20M!");
         }
+    }
+
+    private ByteArrayOutputStream createThumbnail(MultipartFile file, Integer width) throws IOException{
+        ByteArrayOutputStream thumbOutput = new ByteArrayOutputStream();
+        BufferedImage img = ImageIO.read(file.getInputStream());
+        BufferedImage thumbImg = Scalr.resize(img, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, width, Scalr.OP_ANTIALIAS);
+        ImageIO.write(thumbImg, file.getContentType().split("/")[1] , thumbOutput);
+        return thumbOutput;
     }
 }
