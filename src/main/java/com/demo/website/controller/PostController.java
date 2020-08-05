@@ -6,6 +6,8 @@ import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +17,14 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import static org.apache.http.entity.ContentType.IMAGE_JPEG;
@@ -51,8 +60,11 @@ public class PostController {
 
     @GetMapping(value = "/get") // Map ONLY GET Requests
     public @ResponseBody
-    Page<Post> findAll(Pageable pageable) {
-        return postsRepository.findAll(pageable);
+    Page<Post> findAll(Pageable pageable ) {
+        return postsRepository.findAll(pageable).map(post -> {
+           // post.setZonedDateTime(post.getZonedDateTime().format(DateTimeFormatter.RFC_1123_DATE_TIME).);
+            return post;
+        });
     }
 
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
