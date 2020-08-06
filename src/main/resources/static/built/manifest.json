@@ -1,0 +1,6 @@
+{
+  "adminDashboard.js": "adminDashboard.bundle.js",
+  "adminDashboard.js.map": "adminDashboard.bundle.js.map",
+  "index.js": "index.bundle.js",
+  "index.js.map": "index.bundle.js.map"
+}

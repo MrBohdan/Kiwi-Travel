@@ -8,7 +8,7 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.demo</groupId>
+	<groupId>com.kiwi</groupId>
 	<artifactId>website</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>kiwi-travel</name>
@@ -106,7 +106,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.demo.website.WebsiteApplication</mainClass>
+					<mainClass>com.kiwi.website.WebsiteApplication</mainClass>
 				</configuration>
 			</plugin>
 			<!-- TO BUILD REACT WITH SPRING -->

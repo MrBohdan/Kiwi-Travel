@@ -10,7 +10,7 @@ spring:
     username: ${JDBC_DATABASE_USERNAME}
     password: ${JDBC_DATABASE_PASSWORD}
     pool-size: 30
-    maxActive: 10
+    maxActive: 20
     maxIdle: 5
     minIdle: 2
     initialSize: 5
