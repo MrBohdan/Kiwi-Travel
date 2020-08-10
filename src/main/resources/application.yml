@@ -7,8 +7,6 @@ spring:
   datasource:
     jdbc-url: ${JDBC_DATABASE_URL}
     driver-class-name: ${SPRING_DATASOURCE_DRIVER-CLASS-NAME}
-    username: ${JDBC_DATABASE_USERNAME}
-    password: ${JDBC_DATABASE_PASSWORD}
     pool-size: 30
     maxActive: 20
     maxIdle: 5
