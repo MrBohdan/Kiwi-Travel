@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -26,4 +27,6 @@ public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuid
             "p.uuid AS staff_Id" +
             ") FROM post p ")
     Page<Post> findAll(Pageable pageable);
+
+    List<Post> findPostByPostId(UUID id);
 }

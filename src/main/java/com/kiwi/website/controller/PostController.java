@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.MissingServletRequestParameterException;
+import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,6 +18,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import static org.apache.http.entity.ContentType.IMAGE_JPEG;
@@ -37,7 +40,7 @@ public class PostController {
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     @ResponseBody
-    public Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException {
+    public Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
         isTitleEmpty(post);
         isDescriptionEmpty(post);
         isFileEmpty(file);
@@ -65,15 +68,20 @@ public class PostController {
         postsRepository.deleteById(post_Id);
     }
 
-    public void isTitleEmpty(@org.jetbrains.annotations.NotNull Post post) {
+    @GetMapping(value = "/get/{post_Id}") // Map ONLY DELETE Requests
+    public List<Post> findPostById(@PathVariable("post_Id") UUID id){
+        return postsRepository.findPostByPostId(id);
+    }
+
+    public void isTitleEmpty(Post post) throws ServletRequestBindingException {
         if (post.getTitle().isEmpty()) {
-            throw new IllegalStateException("Title cannot be empty!");
+            throw new ServletRequestBindingException("Title cannot be empty!");
         }
     }
 
-    public void isDescriptionEmpty(Post post) {
+    public void isDescriptionEmpty(Post post) throws ServletRequestBindingException {
         if (post.getDescription().isEmpty()) {
-            throw new IllegalStateException("Description cannot be empty!");
+            throw new ServletRequestBindingException("Description cannot be empty!");
         }
     }
     public void isFileEmpty(MultipartFile file) {
