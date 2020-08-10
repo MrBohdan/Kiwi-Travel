@@ -17,6 +17,7 @@ import java.util.UUID;
 @Repository
 public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuidUtil, GenerateZonedDateTimeUtil {
 
+    //TODO
     @Query(value = "SELECT new com.kiwi.website.model.Post(p.postId AS post_Id, " +
             "p.thumbnails as thumbnails, " +
             "p.title as title, " +

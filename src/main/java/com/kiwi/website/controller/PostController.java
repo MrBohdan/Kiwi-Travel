@@ -38,6 +38,8 @@ public class PostController {
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     @ResponseBody
     public Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException {
+        isTitleEmpty(post);
+        isDescriptionEmpty(post);
         isFileEmpty(file);
         isImage(file);
         isImageSizeExceed(file);
@@ -63,6 +65,17 @@ public class PostController {
         postsRepository.deleteById(post_Id);
     }
 
+    public void isTitleEmpty(@org.jetbrains.annotations.NotNull Post post) {
+        if (post.getTitle().isEmpty()) {
+            throw new IllegalStateException("Title cannot be empty!");
+        }
+    }
+
+    public void isDescriptionEmpty(Post post) {
+        if (post.getDescription().isEmpty()) {
+            throw new IllegalStateException("Description cannot be empty!");
+        }
+    }
     public void isFileEmpty(MultipartFile file) {
         if (file.isEmpty()) {
             throw new IllegalStateException("Cannot upload empty file [" + file.getSize() + "]");
