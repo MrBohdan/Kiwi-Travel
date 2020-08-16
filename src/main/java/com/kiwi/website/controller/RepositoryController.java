@@ -6,18 +6,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RepositoryController {
 
-    @RequestMapping(value = "/")
-    public String index() {
+    @RequestMapping("/")
+    public String getIndexView() {
         return "index";
     }
 
-    @RequestMapping(value = "/dashboard")
-    public String dashboard() {
+    @RequestMapping("/dashboard")
+    public String getDashboardView() {
         return "dashboard";
     }
 
-    @RequestMapping(value = "/posts")
-    public String posts() {
+    @RequestMapping("/posts")
+    public String getPostView() {
         return "posts";
+    }
+
+    @RequestMapping("/login")
+    public String getLoginView() {
+        return "login";
     }
 }

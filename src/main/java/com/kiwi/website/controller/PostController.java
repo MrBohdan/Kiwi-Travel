@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.lang.NonNull;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.ServletRequestBindingException;
@@ -39,8 +40,8 @@ public class PostController {
     private PostsRepository postsRepository;
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
-    @ResponseBody
-    public Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
+    @PreAuthorize("hasAuthority('post:add')")
+    public @ResponseBody Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
         isTitleEmpty(post);
         isDescriptionEmpty(post);
         isFileEmpty(file);
@@ -55,6 +56,7 @@ public class PostController {
     }
 
     @GetMapping(value = "/get") // Map ONLY GET Requests
+    @PreAuthorize("hasAuthority('post:get')")
     public @ResponseBody
     Page<Post> findAll(Pageable pageable ) {
         return postsRepository.findAll(pageable).map(post -> {
@@ -64,11 +66,13 @@ public class PostController {
     }
 
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
+    @PreAuthorize("hasAuthority('post:delete')")
     public void removePostByPostId(@PathVariable("post_Id") UUID post_Id) {
         postsRepository.deleteById(post_Id);
     }
 
     @GetMapping(value = "/get/{post_Id}") // Map ONLY DELETE Requests
+    @PreAuthorize("hasAuthority('post:get')")
     public List<Post> findPostById(@PathVariable("post_Id") UUID id){
         return postsRepository.findPostByPostId(id);
     }
