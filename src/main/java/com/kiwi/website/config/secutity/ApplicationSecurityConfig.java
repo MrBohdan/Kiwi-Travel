@@ -2,7 +2,6 @@ package com.kiwi.website.config.secutity;
 
 import com.kiwi.website.controller.StaffController;
 import com.kiwi.website.jwt.JwtConfig;
-import com.kiwi.website.jwt.JwtTokenVerifier;
 import com.kiwi.website.jwt.JwtUsernameAndPasswordAuthenticationFilter;
 import com.kiwi.website.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -35,6 +33,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     private final JwtConfig jwtConfig;
     private final StaffController staffController;
     private JwtUsernameAndPasswordAuthenticationFilter jwtUsernameAndPasswordAuthenticationFilter;
+
     @Autowired
     public ApplicationSecurityConfig(PasswordEncoder passwordEncoder,
                                      StaffService staffService,
@@ -59,11 +58,11 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()*/
                 .csrf().disable()
 
-             /*   .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
-                .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey), JwtUsernameAndPasswordAuthenticationFilter.class)*/
+                /*   .sessionManagement()
+                   .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                   .and()
+                   .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
+                   .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey), JwtUsernameAndPasswordAuthenticationFilter.class)*/
                 .authorizeRequests()
 
                 // define what will be permitted for all
