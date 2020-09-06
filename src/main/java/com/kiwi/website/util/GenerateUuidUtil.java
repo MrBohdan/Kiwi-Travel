@@ -7,7 +7,7 @@ import java.util.UUID;
  */
 public interface GenerateUuidUtil {
 
-    default UUID generateUUID(){
+    default UUID generateUUID() {
         return UUID.randomUUID();
     }
 }

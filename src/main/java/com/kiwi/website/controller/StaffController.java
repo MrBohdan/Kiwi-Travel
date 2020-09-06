@@ -1,18 +1,20 @@
 package com.kiwi.website.controller;
 
 import com.kiwi.website.model.Staff;
-import com.kiwi.website.repository.StaffDao;
+import com.kiwi.website.repository.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
+
 /**
  * The controller is used to handling HTTP requests for the application
+ *
+ * @author Bohdan Skrypnyk (bohdan.skrypnyk@yahoo.com)
  */
 @RestController
 @RequestMapping("api/v1.0/staff/")
@@ -20,31 +22,40 @@ import java.util.UUID;
 @CrossOrigin("*") // should be defined
 public class StaffController {
 
+    private final StaffRepository staffRepository;
+    private final PasswordEncoder passwordEncoder;
+
     @Autowired
-    private StaffDao staffDao;
+    public StaffController(StaffRepository staffRepository, PasswordEncoder passwordEncoder) {
+        this.staffRepository = staffRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @PostMapping(path = "/add") // Map ONLY POST Requests
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public @ResponseBody
-    int addNewUser(@RequestBody Staff staff) {
-        return staffDao.insertStaff(staff);
+    Staff addStaff(@RequestBody Staff staff) {
+        staff.setUuid(staffRepository.generateUUID());
+        staff.setPassword(passwordEncoder.encode(staff.getPassword()));
+        return staffRepository.save(staff);
     }
 
-    @GetMapping(path = "/get") // Map ONLY GET Requests
+    @GetMapping(value = "/get") // Map ONLY GET Requests
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public List<Staff> getUsers() {
-        return staffDao.findAll();
+    public @ResponseBody
+    List<Staff> findAll() {
+        return staffRepository.findAll();
     }
 
     @DeleteMapping(path = "/delete/{uuid}") // Map ONLY DELETE Requests
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public int removeStaffByUuid(@PathVariable("uuid") UUID uuid) {
-        return staffDao.deleteStaffByUuid(uuid);
+    public void removeStaffByUuid(@PathVariable("uuid") UUID uuid) {
+        staffRepository.deleteById(uuid);
     }
 
-    @PutMapping(path = "/put/{id}") // Map ONLY PUT Requests
+ /*   @PutMapping(path = "/put/{id}") // Map ONLY PUT Requests
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public int updateStaffByUuid(@PathVariable("uuid") UUID uuid, @Valid @NonNull @RequestBody Staff staff) {
         return staffDao.updateStaffByUuid(uuid, staff);
-    }
+    }*/
 }

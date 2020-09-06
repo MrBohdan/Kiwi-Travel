@@ -24,3 +24,9 @@ spring:
     multipart:
       max-file-size: 5MB
       max-request-size: 20MB
+
+application:
+  jwt:
+    secretKey: "HETHIyK0NjMUGRxvEpIir8mG46yOEsj1NsonLPdZ3to8RzwBgfKqMd1YQeVivr-bYpLPPg0zCy1y44ND2o86VhqYTaIWFAcG-W9aLnVqFTiqOsDXDuh-i8T8xaoiqzpH4PzRsYFy_Ma5LmRfHmVFE2aez-K0klFLK5O-4UKVl0NVTzjzAKF7F7M7HEp95nwUNZf-8592C1XyA6u_chiEAK_l1awEwFzpFlB7Bl7dG2xBgjTIhd4K1lw3fTT2x6dcOmdSNlShGJ3n0njaCf14Om6DIdketVTeTrKIam59MKeue_sqaJWZoW2zzT3rDUtYzEnZrXqF_bVBe7-5Eg8wOQ"
+    tokenPrefix: "Bearer "
+    tokenExpirationAfterDays: 14

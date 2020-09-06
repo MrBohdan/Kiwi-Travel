@@ -2,32 +2,25 @@ package com.kiwi.website.controller;
 
 import com.kiwi.website.model.Post;
 import com.kiwi.website.repository.PostsRepository;
-import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.lang.NonNull;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import static org.apache.http.entity.ContentType.IMAGE_JPEG;
-import static org.apache.http.entity.ContentType.IMAGE_PNG;
+import static com.kiwi.website.controller.validation.ImageValidation.*;
 
 /**
- * JPA Annotated Pojo that represents a post.
- *
  * @author Bohdan Skrypnyk
  */
 @RestController
@@ -41,7 +34,8 @@ public class PostController {
 
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     @PreAuthorize("hasAuthority('post:add')")
-    public @ResponseBody Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
+    public @ResponseBody
+    Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
         isTitleEmpty(post);
         isDescriptionEmpty(post);
         isFileEmpty(file);
@@ -49,20 +43,19 @@ public class PostController {
         isImageSizeExceed(file);
 
         post.setImage(file.getBytes());
-        post.setThumbnails(createThumbnail(file,600).toByteArray());
+        post.setThumbnails(createThumbnail(file, 600).toByteArray());
         post.setPostId(postsRepository.generateUUID());
         post.setZonedDateTime(postsRepository.generateZonedDateTimeUtil());
         return postsRepository.save(post);
     }
 
-    @GetMapping(value = "/get") // Map ONLY GET Requests
+    @GetMapping(value = "/get/sort/{sortProperty}") // Map ONLY GET Requests
     @PreAuthorize("hasAuthority('post:get')")
     public @ResponseBody
-    Page<Post> findAll(Pageable pageable ) {
-        return postsRepository.findAll(pageable).map(post -> {
-           // post.setZonedDateTime(post.getZonedDateTime().format(DateTimeFormatter.RFC_1123_DATE_TIME).);
-            return post;
-        });
+    Page<Post> findAll(@RequestParam(name = "page", defaultValue = "0") int page,
+                       @RequestParam(name = "size", defaultValue = "9") int size,
+                       @PathVariable("sortProperty") String sortProperty) {
+        return postsRepository.findAll(PageRequest.of(page, size, Sort.by(sortProperty).descending()));
     }
 
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
@@ -73,44 +66,7 @@ public class PostController {
 
     @GetMapping(value = "/get/{post_Id}") // Map ONLY DELETE Requests
     @PreAuthorize("hasAuthority('post:get')")
-    public List<Post> findPostById(@PathVariable("post_Id") UUID id){
+    public List<Post> findPostById(@PathVariable("post_Id") UUID id) {
         return postsRepository.findPostByPostId(id);
-    }
-
-    public void isTitleEmpty(Post post) throws ServletRequestBindingException {
-        if (post.getTitle().isEmpty()) {
-            throw new ServletRequestBindingException("Title cannot be empty!");
-        }
-    }
-
-    public void isDescriptionEmpty(Post post) throws ServletRequestBindingException {
-        if (post.getDescription().isEmpty()) {
-            throw new ServletRequestBindingException("Description cannot be empty!");
-        }
-    }
-    public void isFileEmpty(MultipartFile file) {
-        if (file.isEmpty()) {
-            throw new IllegalStateException("Cannot upload empty file [" + file.getSize() + "]");
-        }
-    }
-
-    public void isImage(MultipartFile file) {
-        if (!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(file.getContentType())) {
-            throw new IllegalStateException("File must be an image [" + file.getContentType() + "]");
-        }
-    }
-
-    public void isImageSizeExceed(MultipartFile file) {
-        if (file.getSize() > 20 * 1024 * 1024) {
-            throw new IllegalStateException("Image size cannot exceed 20M!");
-        }
-    }
-
-    private ByteArrayOutputStream createThumbnail(MultipartFile file, Integer width) throws IOException{
-        ByteArrayOutputStream thumbOutput = new ByteArrayOutputStream();
-        BufferedImage img = ImageIO.read(file.getInputStream());
-        BufferedImage thumbImg = Scalr.resize(img, Scalr.Method.AUTOMATIC, Scalr.Mode.AUTOMATIC, width, Scalr.OP_ANTIALIAS);
-        ImageIO.write(thumbImg, file.getContentType().split("/")[1] , thumbOutput);
-        return thumbOutput;
     }
 }

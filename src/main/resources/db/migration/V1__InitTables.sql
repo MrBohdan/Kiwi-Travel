@@ -9,6 +9,7 @@ CREATE TABLE staff(
     username VARCHAR NOT NULL,
     password VARCHAR(100) NOT NULL
 );
+
 CREATE TABLE post(
     post_Id UUID NOT NULL PRIMARY KEY,
     title VARCHAR(100) NOT NULL,

@@ -11,6 +11,11 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.UUID;
 
+/**
+ * JPA Annotated Pojo (Plain Old Java Object) that represents a post.
+ *
+ * @author Bohdan Skrypnyk (bohdan.skrypnyk@yahoo.com)
+ */
 @Entity(name = "post")
 @Table(name = "post")
 public class Post {
@@ -26,11 +31,20 @@ public class Post {
     private String title;
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;
-    @Column(name = "zonedDateTime", nullable = false, columnDefinition= "TIMESTAMP WITH TIME ZONE")
+    @Column(name = "zonedDateTime", nullable = false, columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private ZonedDateTime zonedDateTime;
     @Column(name = "staff_Id", length = 36, nullable = false)
     private UUID uuid;
 
+    /**
+     * @param postId
+     * @param image
+     * @param thumbnails
+     * @param title
+     * @param description
+     * @param zonedDateTime
+     * @param uuid
+     */
     public Post(@JsonProperty("post_Id") UUID postId,
                 @JsonProperty("image") byte[] image,
                 @JsonProperty("thumbnails") byte[] thumbnails,
@@ -47,6 +61,14 @@ public class Post {
         this.uuid = uuid;
     }
 
+    /**
+     * @param postId
+     * @param thumbnails
+     * @param title
+     * @param description
+     * @param zonedDateTime
+     * @param uuid
+     */
     public Post(@JsonProperty("post_Id") UUID postId,
                 @JsonProperty("thumbnails") byte[] thumbnails,
                 @JsonProperty("title") String title,

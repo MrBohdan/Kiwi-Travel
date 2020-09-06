@@ -1,37 +1,29 @@
 package com.kiwi.website.service;
 
-import com.kiwi.website.model.Staff;
-import com.kiwi.website.repository.StaffDao;
+import com.kiwi.website.repository.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.UUID;
-
+/**
+ * @author Bohdan Skrypnyk (bohdan.skrypnyk@yahoo.com)
+ */
 @Service
-public class StaffService {
+public class StaffService implements UserDetailsService {
 
-    private StaffDao staffDao;
+    private final StaffRepository staffRepository;
 
     @Autowired
-    public StaffService(@Qualifier("postgres_Staff") StaffDao staffDao) {
-        this.staffDao = staffDao;
+    public StaffService(StaffRepository staffRepository) {
+        this.staffRepository = staffRepository;
     }
 
-    public int addStaff(Staff staff) {
-        return staffDao.insertStaff(staff);
-    }
-
-    public List<Staff> getAllStaff() {
-        return staffDao.findAll();
-    }
-
-    public int removeStaff(UUID id) {
-        return staffDao.deleteStaffByUuid(id);
-    }
-
-    public int updateStaff(UUID id, Staff staff) {
-        return staffDao.updateStaffByUuid(id, staff);
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return staffRepository.findByUsername(username)
+                .orElseThrow(() ->
+                        new UsernameNotFoundException(String.format("Username [ %s ] not found", username)));
     }
 }

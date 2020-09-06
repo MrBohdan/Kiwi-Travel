@@ -14,12 +14,11 @@ public class PostgresDatabaseConfig {
     /**
      * These properties will be receive automatically from Heroku env vars if present
      * By default using environment variables from pc.
-     *
      */
     private final static String JDBC_DATABASE_URL = System.getenv("JDBC_DATABASE_URL");
     private final static String JDBC_DATABASE_USERNAME = System.getenv("JDBC_DATABASE_USERNAME");
     private final static String JDBC_DATABASE_PASSWORD = System.getenv("JDBC_DATABASE_PASSWORD");
-    private final static String SPRING_DATASOURCE_DRIVER_CLASS_NAME= System.getenv("SPRING_DATASOURCE_DRIVER-CLASS-NAME");
+    private final static String SPRING_DATASOURCE_DRIVER_CLASS_NAME = System.getenv("SPRING_DATASOURCE_DRIVER-CLASS-NAME");
 
     @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
