@@ -1,6 +1,9 @@
 server:
   port: 8005
 
+java:
+  runtime:
+    version: 11
 # NOTE: use hierarchy structure
 # spring data source properties
 spring:
