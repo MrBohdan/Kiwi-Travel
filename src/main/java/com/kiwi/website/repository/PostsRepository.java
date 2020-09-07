@@ -23,13 +23,12 @@ public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuid
     //TODO try to sort in right order
     @Query(value = "SELECT new com.kiwi.website.model.Post(" +
             "p.postId AS post_Id, " +
-            "p.image as image, " +
             "p.thumbnails as thumbnails, " +
             "p.title as title, " +
             "p.description AS description, " +
             "p.zonedDateTime AS zonedDateTime, " +
             "p.uuid AS staff_Id" +
-            ") FROM post p ORDER BY zonedDateTime DESC")
+            ") FROM post p")
     Page<Post> findAll(Pageable pageable);
 
     List<Post> findPostByPostId(UUID id);
