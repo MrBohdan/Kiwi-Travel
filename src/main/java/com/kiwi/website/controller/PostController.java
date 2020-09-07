@@ -54,7 +54,7 @@ public class PostController {
     Page<Post> findAll(@RequestParam(name = "page", defaultValue = "0") int page,
                        @RequestParam(name = "size", defaultValue = "9") int size,
                        @PathVariable("sortProperty") String sortProperty) {
-        return postsRepository.findAll(PageRequest.of(page, size, Sort.by(sortProperty).descending()));
+        return postsRepository.findAll(PageRequest.of(page, size/*. Sort.by(sortProperty).descending()*/));
     }
 
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
