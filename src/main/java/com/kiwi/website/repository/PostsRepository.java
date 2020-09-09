@@ -20,7 +20,7 @@ import java.util.UUID;
 @Repository
 public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuidUtil, GenerateZonedDateTimeUtil {
 
-    //TODO try to sort in right order
+    // Not getting the original image to increase the time
     @Query(value = "SELECT new com.kiwi.website.model.Post(" +
             "p.postId AS post_Id, " +
             "p.thumbnails as thumbnails, " +
