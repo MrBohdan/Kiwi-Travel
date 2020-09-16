@@ -10,11 +10,18 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 
 import static org.apache.http.entity.ContentType.IMAGE_JPEG;
 import static org.apache.http.entity.ContentType.IMAGE_PNG;
 
 public class ImageValidation {
+
+    public static void isFile(MultipartFile file){
+        isFileEmpty(file);
+        isImage(file);
+        isImageSizeExceed(file);
+    }
 
     public static void isTitleEmpty(Post post) throws ServletRequestBindingException {
         if (post.getTitle().isEmpty()) {
@@ -28,19 +35,19 @@ public class ImageValidation {
         }
     }
 
-    public static void isFileEmpty(MultipartFile file) {
+    private static void isFileEmpty(MultipartFile file) {
         if (file.isEmpty()) {
             throw new IllegalStateException("Cannot upload empty file [" + file.getSize() + "]");
         }
     }
 
-    public static void isImage(MultipartFile file) {
+    private static void isImage(MultipartFile file) {
         if (!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType()).contains(file.getContentType())) {
             throw new IllegalStateException("File must be an image [" + file.getContentType() + "]");
         }
     }
 
-    public static void isImageSizeExceed(MultipartFile file) {
+    private static void isImageSizeExceed(MultipartFile file) {
         if (file.getSize() > 20 * 1024 * 1024) {
             throw new IllegalStateException("Image size cannot exceed 20M!");
         }

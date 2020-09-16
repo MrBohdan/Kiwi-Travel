@@ -27,7 +27,7 @@ public class Post {
     private byte[] image;
     @Column(name = "thumbnails", nullable = false)
     private byte[] thumbnails;
-    @Column(name = "title", nullable = false)
+    @Column(name = "title", nullable = false, columnDefinition = "TEXT")
     private String title;
     @Column(name = "description", nullable = false, columnDefinition = "TEXT")
     private String description;

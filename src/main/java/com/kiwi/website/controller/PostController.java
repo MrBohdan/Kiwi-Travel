@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.lang.NonNull;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.parameters.P;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
@@ -34,12 +35,11 @@ public class PostController {
     @PostMapping(value = "/add")  // Map ONLY POST Requests
     @PreAuthorize("hasAuthority('post:add')")
     public @ResponseBody
-    Post addPost(@RequestParam("file") MultipartFile file, @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
+    Post addPost(@RequestParam("file") MultipartFile file,
+                 @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
         isTitleEmpty(post);
         isDescriptionEmpty(post);
-        isFileEmpty(file);
-        isImage(file);
-        isImageSizeExceed(file);
+        isFile(file);
 
         post.setImage(file.getBytes());
         post.setThumbnails(createThumbnail(file, 600).toByteArray());
@@ -57,6 +57,25 @@ public class PostController {
         return postsRepository.findAll(PageRequest.of(page, size, Sort.by(sortProperty).descending()));
     }
 
+    @PutMapping(value = "/update/{post_Id}")
+    @PreAuthorize("hasAuthority('post:put')")
+    public Post updatePost(@PathVariable("post_Id") UUID post_Id,
+                           @RequestParam("file") MultipartFile file,
+                           @Validated @NonNull @ModelAttribute Post post) throws IOException, ServletRequestBindingException {
+        Post updatePost = findPostById(post_Id);
+        isTitleEmpty(post);
+        isDescriptionEmpty(post);
+        isFile(file);
+
+        updatePost.setTitle(post.getTitle());
+        updatePost.setDescription(post.getDescription());
+        updatePost.setImage(file.getBytes());
+        updatePost.setThumbnails(createThumbnail(file, 600).toByteArray());
+        updatePost.setStaffId(post.getStaffId());
+        updatePost.setZonedDateTime(postsRepository.generateZonedDateTimeUtil());
+        return postsRepository.save(updatePost);
+    }
+
     @DeleteMapping(value = "/delete/{post_Id}") // Map ONLY DELETE Requests
     @PreAuthorize("hasAuthority('post:delete')")
     public void removePostByPostId(@PathVariable("post_Id") UUID post_Id) {
@@ -65,7 +84,7 @@ public class PostController {
 
     @GetMapping(value = "/get/{post_Id}") // Map ONLY DELETE Requests
     @PreAuthorize("hasAuthority('post:get')")
-    public List<Post> findPostById(@PathVariable("post_Id") UUID id) {
+    public Post findPostById(@PathVariable("post_Id") UUID id) {
         return postsRepository.findPostByPostId(id);
     }
 }

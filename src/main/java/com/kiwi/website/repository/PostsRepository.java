@@ -31,5 +31,5 @@ public interface PostsRepository extends JpaRepository<Post, UUID>, GenerateUuid
             ") FROM post p")
     Page<Post> findAll(Pageable pageable);
 
-    List<Post> findPostByPostId(UUID id);
+    Post findPostByPostId(UUID id);
 }
