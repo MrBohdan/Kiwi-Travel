@@ -53,47 +53,47 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                /*.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-//                .and()*/
-//                .csrf().disable()
-//
-//                /*   .sessionManagement()
-//                   .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                   .and()
-//                   .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
-//                   .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey), JwtUsernameAndPasswordAuthenticationFilter.class)*/
-//                .authorizeRequests()
-//
-//                // define what will be permitted for all
-//                .antMatchers(HttpMethod.GET, "/",
-//                        "index",
-//                        "/login",
-//                        "/api/v1.0/map/getMap",
-//                        "/built/assets/*.video.mp4",
-//                        "/built/assets/*.logo_full.png",
-//                        "/built/public/*",
-//                        "/built/login/*",
-//                        "/built/main/*")
-//                .permitAll()
-//                .anyRequest()
-//                .authenticated()
-//
-//                .and()
-//                .formLogin()
-//                .loginPage("/login").permitAll()
-//                .defaultSuccessUrl("/dashboard", true)
-//                .passwordParameter("password")
-//                .usernameParameter("username")
-//
-//                .and()
-//                .logout()
-//                .logoutUrl("/logout")
-//                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
-//                .clearAuthentication(true)
-//                .invalidateHttpSession(true)
-//                .deleteCookies("JSESSIONID")
-//                .logoutSuccessUrl("/");
+        http
+                /*.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .and()*/
+                .csrf().disable()
+
+                /*   .sessionManagement()
+                   .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                   .and()
+                   .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
+                   .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey), JwtUsernameAndPasswordAuthenticationFilter.class)*/
+                .authorizeRequests()
+
+                // define what will be permitted for all
+                .antMatchers(HttpMethod.GET, "/",
+                        "index",
+                        "/login",
+                        "/api/v1.0/map/getMap",
+                        "/built/assets/*.video.mp4",
+                        "/built/assets/*.logo_full.png",
+                        "/built/public/*",
+                        "/built/login/*",
+                        "/built/main/*")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+
+                .and()
+                .formLogin()
+                .loginPage("/login").permitAll()
+                .defaultSuccessUrl("/dashboard", true)
+                .passwordParameter("password")
+                .usernameParameter("username")
+
+                .and()
+                .logout()
+                .logoutUrl("/logout")
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
+                .clearAuthentication(true)
+                .invalidateHttpSession(true)
+                .deleteCookies("JSESSIONID")
+                .logoutSuccessUrl("/");
     }
 
     @Override

@@ -10,14 +10,13 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.UUID;
 
 import static org.apache.http.entity.ContentType.IMAGE_JPEG;
 import static org.apache.http.entity.ContentType.IMAGE_PNG;
 
 public class ImageValidation {
 
-    public static void isFile(MultipartFile file){
+    public static void isFile(MultipartFile file) {
         isFileEmpty(file);
         isImage(file);
         isImageSizeExceed(file);
