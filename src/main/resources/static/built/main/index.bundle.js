@@ -35890,16 +35890,16 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/components/assets/img/ezgif-frame-001.jpg":
-/*!*******************************************************!*\
-  !*** ./src/components/assets/img/ezgif-frame-001.jpg ***!
-  \*******************************************************/
+/***/ "./src/components/assets/img/frame-001.jpg":
+/*!*************************************************!*\
+  !*** ./src/components/assets/img/frame-001.jpg ***!
+  \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("built/assets/1edA7cDNfz.ezgif-frame-001.jpg");
+/* harmony default export */ __webpack_exports__["default"] = ("built/assets/1edA7cDNfz.frame-001.jpg");
 
 /***/ }),
 
@@ -36158,7 +36158,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _assets_video_test3_mp4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../assets/video/test3.mp4 */ "./src/components/assets/video/test3.mp4");
-/* harmony import */ var _assets_img_ezgif_frame_001_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../assets/img/ezgif-frame-001.jpg */ "./src/components/assets/img/ezgif-frame-001.jpg");
+/* harmony import */ var _assets_img_frame_001_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../assets/img/frame-001.jpg */ "./src/components/assets/img/frame-001.jpg");
 
 
 
@@ -36168,7 +36168,7 @@ var BackgroundVideo = function BackgroundVideo() {
     className: "video-background"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("video", {
     className: "video-container",
-    poster: _assets_img_ezgif_frame_001_jpg__WEBPACK_IMPORTED_MODULE_2__["default"],
+    poster: _assets_img_frame_001_jpg__WEBPACK_IMPORTED_MODULE_2__["default"],
     preload: "none",
     playsinline: true,
     autoPlay: true,

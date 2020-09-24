@@ -72,6 +72,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/v1.0/map/getMap",
                         "/built/assets/*.video.mp4",
                         "/built/assets/*.logo_full.png",
+                        "/built/assets/*.frame-001.jpg",
                         "/built/public/*",
                         "/built/login/*",
                         "/built/main/*")
