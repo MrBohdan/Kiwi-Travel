@@ -4,9 +4,12 @@ import com.kiwi.website.model.Staff;
 import com.kiwi.website.repository.StaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 
@@ -53,9 +56,10 @@ public class StaffController {
         staffRepository.deleteById(uuid);
     }
 
- /*   @PutMapping(path = "/put/{id}") // Map ONLY PUT Requests
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public int updateStaffByUuid(@PathVariable("uuid") UUID uuid, @Valid @NonNull @RequestBody Staff staff) {
-        return staffDao.updateStaffByUuid(uuid, staff);
-    }*/
+    @GetMapping(value = "get/authorizedStaff/staff_Id")
+    public @ResponseBody
+    UUID authorizedStaff(HttpServletRequest request) {
+        Staff user = (Staff) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return user.getUuid();
+    }
 }
