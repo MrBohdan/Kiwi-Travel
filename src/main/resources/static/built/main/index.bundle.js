@@ -37218,16 +37218,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/components/assets/video/test3_1.mp4":
-/*!*************************************************!*\
-  !*** ./src/components/assets/video/test3_1.mp4 ***!
-  \*************************************************/
+/***/ "./src/components/assets/video/test3.mp4":
+/*!***********************************************!*\
+  !*** ./src/components/assets/video/test3.mp4 ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("built/assets/2Hypf-QHrx.video.mp4");
+/* harmony default export */ __webpack_exports__["default"] = ("built/assets/3ctVgCb0se.video.mp4");
 
 /***/ }),
 
@@ -37461,7 +37461,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_video_cover__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-video-cover */ "./node_modules/react-video-cover/dist/lib/index.js");
 /* harmony import */ var react_video_cover__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_video_cover__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _assets_video_test3_1_mp4__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../assets/video/test3_1.mp4 */ "./src/components/assets/video/test3_1.mp4");
+/* harmony import */ var _assets_video_test3_mp4__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../assets/video/test3.mp4 */ "./src/components/assets/video/test3.mp4");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37503,7 +37503,7 @@ var BackgroundVideo = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var videoOptions = {
-        src: _assets_video_test3_1_mp4__WEBPACK_IMPORTED_MODULE_2__["default"],
+        src: _assets_video_test3_mp4__WEBPACK_IMPORTED_MODULE_2__["default"],
         autoPlay: true,
         muted: true,
         loop: true,
