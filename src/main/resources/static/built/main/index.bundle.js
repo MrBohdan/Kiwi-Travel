@@ -35899,7 +35899,7 @@ module.exports = function (css) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("built/assets/img/1edA7cDNfz.frame-001.jpg");
+/* harmony default export */ __webpack_exports__["default"] = ("built/assets/1edA7cDNfz.frame-001.jpg");
 
 /***/ }),
 
@@ -35912,7 +35912,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("built/assets/img/8WFXiUg9eZ.logo_full.png");
+/* harmony default export */ __webpack_exports__["default"] = ("built/assets/8WFXiUg9eZ.logo_full.png");
 
 /***/ }),
 
@@ -35925,7 +35925,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("built/assets/video/3ctVgCb0se.video.mp4");
+/* harmony default export */ __webpack_exports__["default"] = ("built/assets/3ctVgCb0se.video.mp4");
 
 /***/ }),
 
