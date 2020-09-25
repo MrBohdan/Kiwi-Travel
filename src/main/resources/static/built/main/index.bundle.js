@@ -36367,9 +36367,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Index = function Index() {
+  var injectGA = function injectGA() {
+    if (typeof window == 'undefined') {
+      return;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-M795DMJWVW');
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "container-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_feed_index__WEBPACK_IMPORTED_MODULE_2__["UpperFeed"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_feed_index__WEBPACK_IMPORTED_MODULE_2__["MiddleFeed"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_feed_index__WEBPACK_IMPORTED_MODULE_2__["FooterSection"], null));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
+    async: true,
+    src: "https://www.googletagmanager.com/gtag/js?id=G-M795DMJWVW"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", null, injectGA()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_feed_index__WEBPACK_IMPORTED_MODULE_2__["UpperFeed"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_feed_index__WEBPACK_IMPORTED_MODULE_2__["MiddleFeed"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_feed_index__WEBPACK_IMPORTED_MODULE_2__["FooterSection"], null));
 };
 
 setTimeout(function () {
