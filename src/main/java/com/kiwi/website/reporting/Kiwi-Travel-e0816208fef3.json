@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "kiwi-travel",
+  "private_key_id": "e0816208fef31ffb1a3a7d73edad6f297d9459d5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCySiVTNzEaVyqn\nVN+ytMjsl9b28GpEcKM9+syzLpOf6QbC3KEZcViXIwXS1PL9m0UBESIMSPNsnuYp\ncFLYt5aQyOlCQ00hTY1BgzcU0hbgdQY/oTHZQhkA7xh5jlbcWPUNOdPFbbKEVEWE\n5iiIgqEl4TfZx44o0p4tHEoxfW2RyA4RUtFHR3Ln9SE6inji4Kd2aRKLiT6R+jpY\neccKWjoeJDUstjqOetenLOC2Ads2zK7K/A4+w3Kxh/mfTAokQKjKeBb1MKTvoVTF\ns+JiuWIGmPXLC9+hI0d1Ow8QZSPdRsAmoq1N8ZBGHfZC4a6I4SFp7Ybnfe1NSx9Z\nWsQiRRXVAgMBAAECggEAJGQwBDFSy36ZTThsxKxUCr7feN4PwtJ+74q+t6A9L7m/\n0Ix6MZhKLedPK/6dbph/2DzoBzvou/YfIrwznNq0V+86dXUJTE/pEkM3Pf+3/a7F\nTL2ZUDBGrEMhasZcAnQB6OYxzK2cb5hH7F2STnLjc7jpzoEGCl0bPjf1CO8CK2wj\n4hZbs/Yg+2Y4fooElt8iIz1NchCb7CvFCZxhSwEjYSW9OQvr3spAohtnOLhh6xNP\njBf/x0YbTsqrURD+kTIrDpXBlOiNU1kn/ZY5CrF2GZz4bnbdxxz+worGMcIurxCE\nXtnULtL4gEIkpdXMxcg4zC4AulwwRPjJx+sL/FKSbQKBgQDhuMtQ7UjLKs+/EJF3\nDLXs14Fy3Qn5FqEp4acVfKctwcy4CSbwEwSn18/diNuc/rZwYCw9m/tr/3AL/DYk\nOZO9jr/oIr21Jiz1M1NrSFJc4sKkwcAsJwKUD3+4n8ewEp7j4BWrmbla1itDbKBo\nXeLjcwUCNrm7jTTV0ogF6RF9ewKBgQDKNIvoLz7EL5o87WSr2s2u4eVo7DbHixWt\nhFNzio15cCCiWJE+moAD5vCX2hTzJ1tCnqTzJ4UhTGrUPzOuzCz2PfFmetXy3rT5\ndb5IlPelEbZ4n4ScYPKGW2MtUp6hXzvq6JoTqVPWOYc+ijHWeKvwwb+kjBTsM8Vm\nAjRw4efQ7wKBgQDP2ng27FoU5DZrjdk11FmOYCCO4iZ13jXIOEfAzImx4/0dFyho\n+EpYOK3sJUN9/TuInbb/gKx0FcNa9gPxNafrbREgtSUWM7JAlOPjLbTSXem5B8Vr\novyH1QHaxB+A7pSr6ERsQWFi2Ub7joLjuFje86KQGE7N+0jFAVpKfwWhEwKBgQCl\nsW9f4K8XRkamXIVdCdv3zWYWl1HAK+mkmUVk7YlGlKo5Pkguu53hFLHcTTlTktGG\ngsd59M1z3tG/gNbSCr9hPJr+tfNxpCs6K9C0W1We7yfOKjEZj5vMm0Bm2Efixk4s\nDVSMffmUFuoLRmTWcWW70JhAtwVCFJ5SG8ZrJcK3AwKBgCkRmpm0TuM3iM5I1amD\n8GuJjlH7uU/kIrOweT87W6ZY5qjqo7WOyD6DCid4/5dce5aA4H77mdQimqZh3jzJ\nCTgXZW3LCzln1DFW4br4bqjBhF2z2UXOkO5TsUTMNjjYfCQNUzCu31VOgo5xYo8D\nUUXZAkcoIPFShNlTUUYWRzZp\n-----END PRIVATE KEY-----\n",
+  "client_email": "kiwi-travel@kiwi-travel.iam.gserviceaccount.com",
+  "client_id": "115079576665049928912",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kiwi-travel%40kiwi-travel.iam.gserviceaccount.com"
+}
