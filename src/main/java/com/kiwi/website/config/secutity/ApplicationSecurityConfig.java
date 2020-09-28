@@ -69,7 +69,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/",
                         "index",
                         "/login",
-                        "/api/v1.0/map/getMap",
+                        "/api/v1.0/post/open/get",
                         "/built/assets/*.video.mp4",
                         "/built/assets/*.logo_full.png",
                         "/built/assets/*.frame-001.jpg",

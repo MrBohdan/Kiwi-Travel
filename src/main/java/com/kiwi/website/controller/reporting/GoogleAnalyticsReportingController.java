@@ -1,11 +1,19 @@
-package com.kiwi.website.reporting;
+package com.kiwi.website.controller.reporting;
 
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.services.analyticsreporting.v4.AnalyticsReporting;
+import com.google.api.services.analyticsreporting.v4.AnalyticsReportingScopes;
+import com.google.api.services.analyticsreporting.v4.model.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -13,26 +21,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.google.api.services.analyticsreporting.v4.AnalyticsReportingScopes;
-import com.google.api.services.analyticsreporting.v4.AnalyticsReporting;
-
-import com.google.api.services.analyticsreporting.v4.model.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
 @RestController
 @RequestMapping("/analytics")
-public class GoogleAnalyticsReporting {
+public class GoogleAnalyticsReportingController {
 
     private static final String APPLICATION_NAME = "Kiwi-Travel Analytics Reporting";
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-    private static final String KEY_FILE_LOCATION = "E:\\website\\website\\src\\main\\java\\com\\kiwi\\website\\reporting\\Kiwi-Travel-e0816208fef3.json";
+    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+    private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
     private static final String VIEW_ID = "229874627";
 
     @GetMapping
-    public void doGet(){
+    public void doGet() {
         try {
             AnalyticsReporting service = initializeAnalyticsReporting();
             GetReportsResponse response = getReport(service);
@@ -50,10 +50,9 @@ public class GoogleAnalyticsReporting {
      * @throws GeneralSecurityException
      */
     private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
-
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         GoogleCredential credential = GoogleCredential
-                .fromStream(new FileInputStream(KEY_FILE_LOCATION))
+                .fromStream(new FileInputStream(KEY_FILE))
                 .createScoped(AnalyticsReportingScopes.all());
 
         // Construct the Analytics Reporting service object.
@@ -68,26 +67,52 @@ public class GoogleAnalyticsReporting {
      * @return GetReportResponse The Analytics Reporting API V4 response.
      * @throws IOException
      */
-    private static GetReportsResponse getReport(AnalyticsReporting service) throws IOException {
+    private static  GetReportsResponse getReport(AnalyticsReporting service) throws IOException {
+        String[] metricsArr = {
+                "ga:users",
+                "ga:newUsers",
+                "ga:sessions",
+                "ga:totalEvents",
+                "ga:pageviews",
+                "ga:pageviewsPerSession",
+                "ga:avgSessionDuration"
+        };
+        String[] dimensionsArr = {
+                "ga:eventCategory",
+                "ga:country",
+                "ga:region",
+                "ga:city",
+                "ga:latitude",
+                "ga:longitude",
+                "ga:eventAction",
+                "ga:country",
+                "ga:source",
+        };
 
         // Create the DateRange object.
         DateRange dateRange = new DateRange();
-        dateRange.setStartDate("7DaysAgo");
+        dateRange.setStartDate("30daysAgo");
         dateRange.setEndDate("today");
 
         // Create the Metrics object.
-        Metric sessions = new Metric()
-                .setExpression("ga:sessions")
-                .setAlias("sessions");
+        ArrayList<Metric> metrics = new ArrayList<Metric>();
+        for (String item : metricsArr) {
+            Metric m = new Metric().setExpression(item).setAlias(item.replace("ga:", ""));
+            metrics.add(m);
+        }
 
-        Dimension pageTitle = new Dimension().setName("ga:pageTitle");
+        ArrayList<Dimension> dimensions = new ArrayList<Dimension>();
+        for (String item : dimensionsArr) {
+            Dimension d = new Dimension().setName(item);
+            dimensions.add(d);
+        }
 
         // Create the ReportRequest object.
         ReportRequest request = new ReportRequest()
                 .setViewId(VIEW_ID)
                 .setDateRanges(Arrays.asList(dateRange))
-                .setMetrics(Arrays.asList(sessions))
-                .setDimensions(Arrays.asList(pageTitle));
+                .setMetrics(metrics)
+                .setDimensions(dimensions);
 
         ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
         requests.add(request);
@@ -108,9 +133,9 @@ public class GoogleAnalyticsReporting {
      *
      * @param response An Analytics Reporting API V4 response.
      */
-    private static  void printResponse(GetReportsResponse response) {
+    private static void printResponse(GetReportsResponse response) {
 
-        for (Report report: response.getReports()) {
+        for (Report report : response.getReports()) {
             ColumnHeader header = report.getColumnHeader();
             List<String> dimensionHeaders = header.getDimensions();
             List<MetricHeaderEntry> metricHeaders = header.getMetricHeader().getMetricHeaderEntries();
@@ -121,7 +146,7 @@ public class GoogleAnalyticsReporting {
                 return;
             }
 
-            for (ReportRow row: rows) {
+            for (ReportRow row : rows) {
                 List<String> dimensions = row.getDimensions();
                 List<DateRangeValues> metrics = row.getMetrics();
 

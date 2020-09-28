@@ -13,6 +13,7 @@ import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.security.PermitAll;
 import java.io.IOException;
 import java.util.UUID;
 
@@ -53,6 +54,14 @@ public class PostController {
                        @RequestParam(name = "size", defaultValue = "9") int size,
                        @PathVariable("sortProperty") String sortProperty) {
         return postsRepository.findAll(PageRequest.of(page, size, Sort.by(sortProperty).descending()));
+    }
+
+    @GetMapping(value = "open/get") // Map ONLY GET Requests
+    @PermitAll
+    public @ResponseBody
+    Page<Post> findAll(@RequestParam(name = "page", defaultValue = "0") int page,
+                       @RequestParam(name = "size", defaultValue = "9") int size) {
+        return postsRepository.findAll(PageRequest.of(page, size, Sort.by("zonedDateTime").descending()));
     }
 
     @PutMapping(value = "/update/{post_Id}")
