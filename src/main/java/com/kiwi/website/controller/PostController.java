@@ -56,11 +56,11 @@ public class PostController {
         return postsRepository.findAll(PageRequest.of(page, size, Sort.by(sortProperty).descending()));
     }
 
-    @GetMapping(value = "open/get") // Map ONLY GET Requests
+    @GetMapping(value = "/open/get") // Map ONLY GET Requests
     @PermitAll
     public @ResponseBody
     Page<Post> findAll(@RequestParam(name = "page", defaultValue = "0") int page,
-                       @RequestParam(name = "size", defaultValue = "9") int size) {
+                       @RequestParam(name = "size", defaultValue = "8") int size) {
         return postsRepository.findAll(PageRequest.of(page, size, Sort.by("zonedDateTime").descending()));
     }
 

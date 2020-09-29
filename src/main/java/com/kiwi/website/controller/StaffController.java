@@ -9,7 +9,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
 import java.util.List;
 import java.util.UUID;
 
@@ -57,6 +56,7 @@ public class StaffController {
     }
 
     @GetMapping(value = "get/authorizedStaff/staff_Id")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public @ResponseBody
     UUID authorizedStaff(HttpServletRequest request) {
         Staff user = (Staff) SecurityContextHolder.getContext().getAuthentication().getPrincipal();

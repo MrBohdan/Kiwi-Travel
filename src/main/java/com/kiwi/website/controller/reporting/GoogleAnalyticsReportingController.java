@@ -10,7 +10,6 @@ import com.google.api.services.analyticsreporting.v4.AnalyticsReportingScopes;
 import com.google.api.services.analyticsreporting.v4.model.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
@@ -67,7 +66,7 @@ public class GoogleAnalyticsReportingController {
      * @return GetReportResponse The Analytics Reporting API V4 response.
      * @throws IOException
      */
-    private static  GetReportsResponse getReport(AnalyticsReporting service) throws IOException {
+    private static GetReportsResponse getReport(AnalyticsReporting service) throws IOException {
         String[] metricsArr = {
                 "ga:users",
                 "ga:newUsers",

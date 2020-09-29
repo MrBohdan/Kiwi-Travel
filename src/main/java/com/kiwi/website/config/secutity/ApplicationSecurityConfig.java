@@ -58,11 +58,11 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()*/
                 .csrf().disable()
 
-                /*   .sessionManagement()
-                   .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                   .and()
-                   .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
-                   .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey), JwtUsernameAndPasswordAuthenticationFilter.class)*/
+//                /*   .sessionManagement()
+//                   .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                   .and()
+//                   .addFilter(new JwtUsernameAndPasswordAuthenticationFilter(authenticationManager(), jwtConfig, secretKey))
+//                   .addFilterAfter(new JwtTokenVerifier(jwtConfig, secretKey), JwtUsernameAndPasswordAuthenticationFilter.class)*/
                 .authorizeRequests()
 
                 // define what will be permitted for all
