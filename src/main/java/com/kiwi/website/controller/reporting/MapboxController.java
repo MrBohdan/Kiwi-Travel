@@ -13,7 +13,7 @@ public class MapboxController {
 
     @GetMapping(value = "/getToken") // Map ONLY GET Requests
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String getMapBoxToken(){
+    public String getMapBoxToken() {
         return REACT_APP_MAPBOX_ACCESS_TOKEN;
     }
 }

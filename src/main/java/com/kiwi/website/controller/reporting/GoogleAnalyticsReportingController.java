@@ -8,13 +8,13 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.analyticsreporting.v4.AnalyticsReporting;
 import com.google.api.services.analyticsreporting.v4.AnalyticsReportingScopes;
 import com.google.api.services.analyticsreporting.v4.model.*;
+import com.kiwi.website.context.AppContext;
+import org.springframework.core.io.Resource;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,14 +26,11 @@ public class GoogleAnalyticsReportingController {
 
     private static final String APPLICATION_NAME = "Kiwi-Travel Analytics Reporting";
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-//    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-//    private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
-//    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-    private static final File KEY_FILE = new File(System.getProperty("user.dir"), "/Kiwi-Travel-e0816208fef3.json");
     private static final String VIEW_ID = "229874627";
     private static String START_DATE_RANGE;
     private static String END_DATE_RANGE;
 
+    public static Resource KEY_FILE = AppContext.applicationContext.getBean("jsonFile", Resource.class);
 
     /**
      * Initializes an Analytics Reporting API V4 service object.
@@ -44,9 +41,8 @@ public class GoogleAnalyticsReportingController {
      */
     private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-        System.out.println(KEY_FILE);
         GoogleCredential credential = GoogleCredential
-                .fromStream(new FileInputStream(KEY_FILE))
+                .fromStream(new FileInputStream(KEY_FILE.getFile()))
                 .createScoped(AnalyticsReportingScopes.all());
 
         // Construct the Analytics Reporting service object.
@@ -525,4 +521,5 @@ public class GoogleAnalyticsReportingController {
             }
         }
     }
+
 }
