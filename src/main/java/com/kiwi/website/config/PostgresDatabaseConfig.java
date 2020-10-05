@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import java.net.URISyntaxException;
 
 @Configuration
-@ComponentScan(basePackages = "com.demo.website.datasource")
+//@ComponentScan(basePackages = "com.demo.website.datasource")
 public class PostgresDatabaseConfig {
 
     /**
