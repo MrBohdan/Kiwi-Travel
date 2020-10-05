@@ -8,9 +8,8 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.services.analyticsreporting.v4.AnalyticsReporting;
 import com.google.api.services.analyticsreporting.v4.AnalyticsReportingScopes;
 import com.google.api.services.analyticsreporting.v4.model.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/analytics")
+@RequestMapping("api/v1.0/analytics/")
 public class GoogleAnalyticsReportingController {
 
     private static final String APPLICATION_NAME = "Kiwi-Travel Analytics Reporting";
@@ -29,16 +28,130 @@ public class GoogleAnalyticsReportingController {
     private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
     private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
     private static final String VIEW_ID = "229874627";
+    private static String START_DATE_RANGE;
+    private static String END_DATE_RANGE;
 
-    @GetMapping
-    public void doGet() {
+    @GetMapping(value = "/get/SessionsByDevice") // Map ONLY GET Requests
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public @ResponseBody
+    GetReportsResponse doGetSessionsByDevice(
+            @RequestParam(name = "startDateRange", defaultValue = "30daysAgo") String startDateRange,
+            @RequestParam(name = "endDateRange", defaultValue = "today") String endDateRange
+    ) {
+        START_DATE_RANGE = startDateRange;
+        END_DATE_RANGE = endDateRange;
+
+        GetReportsResponse response = null;
         try {
             AnalyticsReporting service = initializeAnalyticsReporting();
-            GetReportsResponse response = getReport(service);
-            printResponse(response);
+            response = getReportSessionsByDevice(service);
+//            printResponse(response);
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return response;
+    }
+
+    @GetMapping(value = "/get/AudienceOverview") // Map ONLY GET Requests
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public @ResponseBody
+    GetReportsResponse doGetAudienceOverview(
+            @RequestParam(name = "startDateRange", defaultValue = "30daysAgo") String startDateRange,
+            @RequestParam(name = "endDateRange", defaultValue = "today") String endDateRange
+    ) {
+        START_DATE_RANGE = startDateRange;
+        END_DATE_RANGE = endDateRange;
+        GetReportsResponse response = null;
+        try {
+            AnalyticsReporting service = initializeAnalyticsReporting();
+            response = getReportAudienceOverview(service);
+//            printResponse(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    @GetMapping(value = "/get/Sessions") // Map ONLY GET Requests
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public @ResponseBody
+    GetReportsResponse doGetSessions(
+            @RequestParam(name = "startDateRange", defaultValue = "30daysAgo") String startDateRange,
+            @RequestParam(name = "endDateRange", defaultValue = "today") String endDateRange
+    ) {
+        START_DATE_RANGE = startDateRange;
+        END_DATE_RANGE = endDateRange;
+        GetReportsResponse response = null;
+        try {
+            AnalyticsReporting service = initializeAnalyticsReporting();
+            response = getReportSessions(service);
+//            printResponse(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    @GetMapping(value = "/get/SessionDuration") // Map ONLY GET Requests
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public @ResponseBody
+    GetReportsResponse doGetSessionDuration(
+            @RequestParam(name = "startDateRange", defaultValue = "30daysAgo") String startDateRange,
+            @RequestParam(name = "endDateRange", defaultValue = "today") String endDateRange
+    ) {
+        START_DATE_RANGE = startDateRange;
+        END_DATE_RANGE = endDateRange;
+        GetReportsResponse response = null;
+        try {
+            AnalyticsReporting service = initializeAnalyticsReporting();
+            response = getReportSessionDuration(service);
+//            printResponse(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+
+    @GetMapping(value = "/get/NewVsReturningVisitors") // Map ONLY GET Requests
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public @ResponseBody
+    GetReportsResponse doGetNewVsReturningVisitors(
+            @RequestParam(name = "startDateRange", defaultValue = "30daysAgo") String startDateRange,
+            @RequestParam(name = "endDateRange", defaultValue = "today") String endDateRange
+    ) {
+        START_DATE_RANGE = startDateRange;
+        END_DATE_RANGE = endDateRange;
+        GetReportsResponse response = null;
+        try {
+            AnalyticsReporting service = initializeAnalyticsReporting();
+            response = getReportNewVsReturningVisitors(service);
+//            printResponse(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+
+    @GetMapping(value = "/get/GeoNetwork") // Map ONLY GET Requests
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public @ResponseBody
+    GetReportsResponse doGetGeoNetwork(
+            @RequestParam(name = "startDateRange", defaultValue = "30daysAgo") String startDateRange,
+            @RequestParam(name = "endDateRange", defaultValue = "today") String endDateRange
+    ) {
+        START_DATE_RANGE = startDateRange;
+        END_DATE_RANGE = endDateRange;
+        GetReportsResponse response = null;
+        try {
+            AnalyticsReporting service = initializeAnalyticsReporting();
+            response = getReportGeoNetwork(service);
+//            printResponse(response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return response;
     }
 
     /**
@@ -66,41 +179,17 @@ public class GoogleAnalyticsReportingController {
      * @return GetReportResponse The Analytics Reporting API V4 response.
      * @throws IOException
      */
-    private static GetReportsResponse getReport(AnalyticsReporting service) throws IOException {
-        String[] metricsArr = {
-                "ga:users",
-                "ga:newUsers",
-                "ga:sessions",
-                "ga:totalEvents",
-                "ga:pageviews",
-                "ga:pageviewsPerSession",
-                "ga:avgSessionDuration"
-        };
-        String[] dimensionsArr = {
-                "ga:eventCategory",
-                "ga:country",
-                "ga:region",
-                "ga:city",
-                "ga:latitude",
-                "ga:longitude",
-                "ga:eventAction",
-                "ga:country",
-                "ga:source",
-        };
-
+    private static GetReportsResponse getReportSessionsByDevice(AnalyticsReporting service) throws IOException {
         // Create the DateRange object.
         DateRange dateRange = new DateRange();
-        dateRange.setStartDate("30daysAgo");
-        dateRange.setEndDate("today");
+        dateRange.setStartDate(START_DATE_RANGE);
+        dateRange.setEndDate(END_DATE_RANGE);
 
-        // Create the Metrics object.
-        ArrayList<Metric> metrics = new ArrayList<Metric>();
-        for (String item : metricsArr) {
-            Metric m = new Metric().setExpression(item).setAlias(item.replace("ga:", ""));
-            metrics.add(m);
-        }
+        String[] dimensionsArr = {
+                "ga:deviceCategory"
+        };
 
-        ArrayList<Dimension> dimensions = new ArrayList<Dimension>();
+        ArrayList<Dimension> dimensions = new ArrayList<>();
         for (String item : dimensionsArr) {
             Dimension d = new Dimension().setName(item);
             dimensions.add(d);
@@ -110,8 +199,8 @@ public class GoogleAnalyticsReportingController {
         ReportRequest request = new ReportRequest()
                 .setViewId(VIEW_ID)
                 .setDateRanges(Arrays.asList(dateRange))
-                .setMetrics(metrics)
-                .setDimensions(dimensions);
+                .setDimensions(dimensions)
+                .setPageSize(10000);
 
         ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
         requests.add(request);
@@ -126,6 +215,274 @@ public class GoogleAnalyticsReportingController {
         // Return the response.
         return response;
     }
+
+
+    private GetReportsResponse getReportAudienceOverview(AnalyticsReporting service) throws IOException {
+        // Create the DateRange object.
+        DateRange dateRange = new DateRange();
+        dateRange.setStartDate(START_DATE_RANGE);
+        dateRange.setEndDate(END_DATE_RANGE);
+
+        // Create the Metrics object.
+        String[] metricsArr = {
+                "ga:users",
+        };
+
+        ArrayList<Metric> metrics = new ArrayList<>();
+        for (String item : metricsArr) {
+            Metric m = new Metric()
+                    .setExpression(item)
+                    .setAlias(item.replace("ga:", ""));
+            metrics.add(m);
+        }
+
+        String[] dimensionsArr = {
+                "ga:date"
+        };
+
+        ArrayList<Dimension> dimensions = new ArrayList<>();
+        for (String item : dimensionsArr) {
+            Dimension d = new Dimension().setName(item);
+            dimensions.add(d);
+        }
+
+        // Create the ReportRequest object.
+        ReportRequest request = new ReportRequest()
+                .setViewId(VIEW_ID)
+                .setDateRanges(Arrays.asList(dateRange))
+                .setMetrics(metrics)
+                .setDimensions(dimensions)
+                .setPageSize(10000);
+
+        ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
+        requests.add(request);
+
+        // Create the GetReportsRequest object.
+        GetReportsRequest getReport = new GetReportsRequest()
+                .setReportRequests(requests);
+
+        // Call the batchGet method.
+        GetReportsResponse response = service.reports().batchGet(getReport).execute();
+
+        // Return the response.
+        return response;
+
+    }
+
+    private GetReportsResponse getReportSessions(AnalyticsReporting service) throws IOException {
+        // Create the DateRange object.
+        DateRange dateRange = new DateRange();
+        dateRange.setStartDate(START_DATE_RANGE);
+        dateRange.setEndDate(END_DATE_RANGE);
+
+        // Create the Metrics object.
+        String[] metricsArr = {
+                "ga:sessions",
+        };
+
+        ArrayList<Metric> metrics = new ArrayList<>();
+        for (String item : metricsArr) {
+            Metric m = new Metric()
+                    .setExpression(item)
+                    .setAlias(item.replace("ga:", ""));
+            metrics.add(m);
+        }
+
+        String[] dimensionsArr = {
+                "ga:date"
+        };
+
+        ArrayList<Dimension> dimensions = new ArrayList<>();
+        for (String item : dimensionsArr) {
+            Dimension d = new Dimension().setName(item);
+            dimensions.add(d);
+        }
+
+        // Create the ReportRequest object.
+        ReportRequest request = new ReportRequest()
+                .setViewId(VIEW_ID)
+                .setDateRanges(Arrays.asList(dateRange))
+                .setMetrics(metrics)
+                .setDimensions(dimensions)
+                .setPageSize(10000);
+
+        ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
+        requests.add(request);
+
+        // Create the GetReportsRequest object.
+        GetReportsRequest getReport = new GetReportsRequest()
+                .setReportRequests(requests);
+
+        // Call the batchGet method.
+        GetReportsResponse response = service.reports().batchGet(getReport).execute();
+
+        // Return the response.
+        return response;
+
+    }
+
+    private GetReportsResponse getReportSessionDuration(AnalyticsReporting service) throws IOException {
+        // Create the DateRange object.
+        DateRange dateRange = new DateRange();
+        dateRange.setStartDate(START_DATE_RANGE);
+        dateRange.setEndDate(END_DATE_RANGE);
+
+        // Create the Metrics object.
+        String[] metricsArr = {
+                "ga:sessionDuration",
+                "ga:avgSessionDuration"
+        };
+
+        ArrayList<Metric> metrics = new ArrayList<>();
+        for (String item : metricsArr) {
+            Metric m = new Metric()
+                    .setExpression(item)
+                    .setAlias(item.replace("ga:", ""));
+            metrics.add(m);
+        }
+
+        String[] dimensionsArr = {
+                "ga:date"
+        };
+
+        ArrayList<Dimension> dimensions = new ArrayList<>();
+        for (String item : dimensionsArr) {
+            Dimension d = new Dimension().setName(item);
+            dimensions.add(d);
+        }
+
+        // Create the ReportRequest object.
+        ReportRequest request = new ReportRequest()
+                .setViewId(VIEW_ID)
+                .setDateRanges(Arrays.asList(dateRange))
+                .setMetrics(metrics)
+                .setDimensions(dimensions)
+                .setPageSize(10000);
+
+        ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
+        requests.add(request);
+
+        // Create the GetReportsRequest object.
+        GetReportsRequest getReport = new GetReportsRequest()
+                .setReportRequests(requests);
+
+        // Call the batchGet method.
+        GetReportsResponse response = service.reports().batchGet(getReport).execute();
+
+        // Return the response.
+        return response;
+    }
+
+
+    private GetReportsResponse getReportNewVsReturningVisitors(AnalyticsReporting service) throws IOException {
+        // Create the DateRange object.
+        DateRange dateRange = new DateRange();
+        dateRange.setStartDate(START_DATE_RANGE);
+        dateRange.setEndDate(END_DATE_RANGE);
+
+        // Create the Metrics object.
+        String[] metricsArr = {
+                "ga:users",
+        };
+
+        ArrayList<Metric> metrics = new ArrayList<>();
+        for (String item : metricsArr) {
+            Metric m = new Metric()
+                    .setExpression(item)
+                    .setAlias(item.replace("ga:", ""));
+            metrics.add(m);
+        }
+
+        String[] dimensionsArr = {
+                "ga:userType"
+        };
+
+        ArrayList<Dimension> dimensions = new ArrayList<>();
+        for (String item : dimensionsArr) {
+            Dimension d = new Dimension().setName(item);
+            dimensions.add(d);
+        }
+
+        // Create the ReportRequest object.
+        ReportRequest request = new ReportRequest()
+                .setViewId(VIEW_ID)
+                .setDateRanges(Arrays.asList(dateRange))
+                .setMetrics(metrics)
+                .setDimensions(dimensions)
+                .setPageSize(10000);
+
+        ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
+        requests.add(request);
+
+        // Create the GetReportsRequest object.
+        GetReportsRequest getReport = new GetReportsRequest()
+                .setReportRequests(requests);
+
+        // Call the batchGet method.
+        GetReportsResponse response = service.reports().batchGet(getReport).execute();
+
+        // Return the response.
+        return response;
+    }
+
+    private GetReportsResponse getReportGeoNetwork(AnalyticsReporting service) throws IOException {
+        // Create the DateRange object.
+        DateRange dateRange = new DateRange();
+        dateRange.setStartDate(START_DATE_RANGE);
+        dateRange.setEndDate(END_DATE_RANGE);
+
+        // Create the Metrics object.
+        String[] metricsArr = {
+        };
+
+        ArrayList<Metric> metrics = new ArrayList<>();
+        for (String item : metricsArr) {
+            Metric m = new Metric()
+                    .setExpression(item)
+                    .setAlias(item.replace("ga:", ""));
+            metrics.add(m);
+        }
+
+        String[] dimensionsArr = {
+                "ga:continent",
+                "ga:subContinent",
+                "ga:country",
+                "ga:region",
+                "ga:city",
+                "ga:countryIsoCode",
+                "ga:longitude",
+                "ga:latitude",
+//              "ga:date"
+        };
+
+        ArrayList<Dimension> dimensions = new ArrayList<>();
+        for (String item : dimensionsArr) {
+            Dimension d = new Dimension().setName(item);
+            dimensions.add(d);
+        }
+
+        // Create the ReportRequest object.
+        ReportRequest request = new ReportRequest()
+                .setViewId(VIEW_ID)
+                .setDateRanges(Arrays.asList(dateRange))
+                .setMetrics(metrics)
+                .setDimensions(dimensions)
+                .setPageSize(10000);
+
+        ArrayList<ReportRequest> requests = new ArrayList<ReportRequest>();
+        requests.add(request);
+
+        // Create the GetReportsRequest object.
+        GetReportsRequest getReport = new GetReportsRequest()
+                .setReportRequests(requests);
+
+        // Call the batchGet method.
+        GetReportsResponse response = service.reports().batchGet(getReport).execute();
+
+        // Return the response.
+        return response;
+    }
+
 
     /**
      * Parses and prints the Analytics Reporting API V4 response.
