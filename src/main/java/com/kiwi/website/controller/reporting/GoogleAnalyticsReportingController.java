@@ -25,9 +25,8 @@ public class GoogleAnalyticsReportingController {
 
     private static final String APPLICATION_NAME = "Kiwi-Travel Analytics Reporting";
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-//    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
-//    private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
-    private static final  String path = "./Kiwi-Travel-e0816208fef3.json";
+    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+    private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "./Kiwi-Travel-e0816208fef3.json");
     private static final String VIEW_ID = "229874627";
     private static String START_DATE_RANGE;
     private static String END_DATE_RANGE;
@@ -165,7 +164,7 @@ public class GoogleAnalyticsReportingController {
     private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         GoogleCredential credential = GoogleCredential
-                .fromStream(new FileInputStream(path))
+                .fromStream(new FileInputStream(KEY_FILE))
                 .createScoped(AnalyticsReportingScopes.all());
 
         // Construct the Analytics Reporting service object.
