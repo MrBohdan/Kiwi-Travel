@@ -15,7 +15,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.net.URLDecoder;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,13 +26,14 @@ public class GoogleAnalyticsReportingController {
 
     private static final String APPLICATION_NAME = "Kiwi-Travel Analytics Reporting";
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-//    private static final String jarFile = GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-//    private static final String decodedPath = URLDecoder.decode(jarFile, "UTF-8");
-
-    //    private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
+//    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+//    private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
+//    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+    private static final File KEY_FILE = new File(System.getProperty("user.dir"), "/Kiwi-Travel-e0816208fef3.json");
     private static final String VIEW_ID = "229874627";
     private static String START_DATE_RANGE;
     private static String END_DATE_RANGE;
+
 
     /**
      * Initializes an Analytics Reporting API V4 service object.
@@ -44,10 +44,7 @@ public class GoogleAnalyticsReportingController {
      */
     private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-       String jarFile = GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-         String decodedPath = URLDecoder.decode(jarFile, "UTF-8");
-        File KEY_FILE = new File(decodedPath, "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
-        System.out.println(decodedPath);
+        System.out.println(KEY_FILE);
         GoogleCredential credential = GoogleCredential
                 .fromStream(new FileInputStream(KEY_FILE))
                 .createScoped(AnalyticsReportingScopes.all());
