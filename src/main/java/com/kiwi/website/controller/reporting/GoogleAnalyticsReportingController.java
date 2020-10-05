@@ -9,10 +9,13 @@ import com.google.api.services.analyticsreporting.v4.AnalyticsReporting;
 import com.google.api.services.analyticsreporting.v4.AnalyticsReportingScopes;
 import com.google.api.services.analyticsreporting.v4.model.*;
 import com.kiwi.website.context.AppContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.Resource;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -29,8 +32,14 @@ public class GoogleAnalyticsReportingController {
     private static final String VIEW_ID = "229874627";
     private static String START_DATE_RANGE;
     private static String END_DATE_RANGE;
+//    private static final File jarFile = new File(GoogleAnalyticsReportingController.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+//    private static final File KEY_FILE = new File(jarFile.getParentFile().getParent(), "src/main/java/com/kiwi/website/controller/reporting/Kiwi-Travel-e0816208fef3.json");
 
     public static Resource KEY_FILE = AppContext.applicationContext.getBean("jsonFile", Resource.class);
+
+    @Autowired
+    @Qualifier("jsonFile")
+    public Resource jsonFile;
 
     /**
      * Initializes an Analytics Reporting API V4 service object.
@@ -39,10 +48,10 @@ public class GoogleAnalyticsReportingController {
      * @throws IOException
      * @throws GeneralSecurityException
      */
-    private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
+    private  AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         GoogleCredential credential = GoogleCredential
-                .fromStream(new FileInputStream(KEY_FILE.getFile()))
+                .fromStream(new FileInputStream(jsonFile.getFile()))
                 .createScoped(AnalyticsReportingScopes.all());
 
         // Construct the Analytics Reporting service object.
