@@ -2,7 +2,6 @@ package com.kiwi.website.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 
@@ -22,7 +21,7 @@ public class ResourceFiles {
 
     @Bean(name = "jsonFile")
     public Resource getKeyFile() {
-         System.out.println(jsonFile);
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>" + jsonFile);
         try (InputStream is = jsonFile.getInputStream()) {
             return jsonFile;
         } catch (IOException e) {
@@ -30,5 +29,4 @@ public class ResourceFiles {
         }
         return null;
     }
-
 }
