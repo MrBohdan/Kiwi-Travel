@@ -31,6 +31,7 @@ public class ResourceFilesConfig {
             Files.copy(is, temp, StandardCopyOption.REPLACE_EXISTING);
             return temp.toFile();
         } catch (IOException e) {
+            System.out.println(">>>>>>>>>>>>> ResourceFilesConfig >>>>>>>>>>>>>>> FILE NOT FOUND");
             e.printStackTrace();
         }
         return null;
