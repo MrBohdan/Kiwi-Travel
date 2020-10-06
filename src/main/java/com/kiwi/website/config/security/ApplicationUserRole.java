@@ -1,4 +1,4 @@
-package com.kiwi.website.config.secutity;
+package com.kiwi.website.config.security;
 
 import com.google.common.collect.Sets;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,7 +7,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.kiwi.website.config.secutity.ApplicationUserPermission.*;
+import static com.kiwi.website.config.security.ApplicationUserPermission.*;
 
 /**
  * Define Permissions to Roles

@@ -18,7 +18,7 @@ import java.nio.file.StandardCopyOption;
  * @author Bohdan Skrypnyk (bohdan.skrypnyk@yahoo.com)
  */
 @Configuration
-public class ResourceFiles {
+public class ResourceFilesConfig {
 
     @Value("classpath:Kiwi-Travel-e0816208fef3.json")
     private Resource jsonFile;

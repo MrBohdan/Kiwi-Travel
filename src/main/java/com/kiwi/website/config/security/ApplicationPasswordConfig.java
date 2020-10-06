@@ -1,4 +1,4 @@
-package com.kiwi.website.config.secutity;
+package com.kiwi.website.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

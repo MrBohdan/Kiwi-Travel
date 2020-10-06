@@ -1,4 +1,4 @@
-package com.kiwi.website.config.secutity;
+package com.kiwi.website.config.security;
 
 import com.kiwi.website.controller.StaffController;
 import com.kiwi.website.jwt.JwtConfig;
