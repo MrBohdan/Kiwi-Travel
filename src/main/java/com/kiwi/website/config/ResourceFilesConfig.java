@@ -25,6 +25,7 @@ public class ResourceFilesConfig {
 
     @Bean(name = "jsonFile")
     public File getKeyFile() {
+        System.out.println(">>>>>>>>>>>>> ResourceFilesConfig >>>>>>>>>>>>>>>" + jsonFile);
         try (InputStream is = jsonFile.getInputStream()) {
             Path temp = Files.createTempFile("resource-", ".ext");
             Files.copy(is, temp, StandardCopyOption.REPLACE_EXISTING);
