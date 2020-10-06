@@ -35,7 +35,7 @@ public class ResourceFilesConfig {
             LOGGER.info("Temp file created: "+ temp);
             return temp.toFile();
         } catch (IOException e) {
-            LOGGER.info("FILE NOT FOUND: " + jsonFile);
+            LOGGER.warning("FILE NOT FOUND: " + jsonFile);
             e.printStackTrace();
         }
         return null;
