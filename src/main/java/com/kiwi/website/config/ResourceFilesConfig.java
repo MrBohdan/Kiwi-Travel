@@ -28,13 +28,14 @@ public class ResourceFilesConfig {
 
     @Bean(name = "jsonFile")
     public File getKeyFile() {
-        LOGGER.info("Service account JSON received: " + ResourceFilesConfig.class.getName() + " " + jsonFile);
+        LOGGER.info("Service account JSON loaded: " + jsonFile);
         try (InputStream is = jsonFile.getInputStream()) {
             Path temp = Files.createTempFile("resource-", ".ext");
             Files.copy(is, temp, StandardCopyOption.REPLACE_EXISTING);
+            LOGGER.info("Temp file created: "+ temp);
             return temp.toFile();
         } catch (IOException e) {
-            LOGGER.info("FILE NOT FOUND: " + ResourceFilesConfig.class.getName() + " " + jsonFile);
+            LOGGER.info("FILE NOT FOUND: " + jsonFile);
             e.printStackTrace();
         }
         return null;
