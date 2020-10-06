@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.logging.Logger;
 
 /**
  * Inject google analytics API V4 service account JSON
@@ -20,18 +21,20 @@ import java.nio.file.StandardCopyOption;
 @Configuration
 public class ResourceFilesConfig {
 
+    private final static Logger LOGGER = Logger.getLogger(ResourceFilesConfig.class.getName());
+
     @Value("classpath:Kiwi-Travel-e0816208fef3.json")
     private Resource jsonFile;
 
     @Bean(name = "jsonFile")
     public File getKeyFile() {
-        System.out.println(">>>>>>>>>>>>> ResourceFilesConfig >>>>>>>>>>>>>>>" + jsonFile);
+        LOGGER.info("Service account JSON received: " + ResourceFilesConfig.class.getName() + " " + jsonFile);
         try (InputStream is = jsonFile.getInputStream()) {
             Path temp = Files.createTempFile("resource-", ".ext");
             Files.copy(is, temp, StandardCopyOption.REPLACE_EXISTING);
             return temp.toFile();
         } catch (IOException e) {
-            System.out.println(">>>>>>>>>>>>> ResourceFilesConfig >>>>>>>>>>>>>>> FILE NOT FOUND");
+            LOGGER.info("FILE NOT FOUND: " + ResourceFilesConfig.class.getName() + " " + jsonFile);
             e.printStackTrace();
         }
         return null;
