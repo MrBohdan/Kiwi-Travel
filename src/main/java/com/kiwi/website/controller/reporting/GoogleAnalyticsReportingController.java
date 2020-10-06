@@ -13,6 +13,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -29,8 +30,7 @@ public class GoogleAnalyticsReportingController {
     private static final String VIEW_ID = "229874627";
     private static String START_DATE_RANGE;
     private static String END_DATE_RANGE;
-
-    public static Resource KEY_FILE = AppContext.applicationContext.getBean("jsonFile", Resource.class);
+    public static File KEY_FILE = AppContext.applicationContext.getBean("jsonFile", File.class);
 
     /**
      * Initializes an Analytics Reporting API V4 service object.
@@ -41,8 +41,9 @@ public class GoogleAnalyticsReportingController {
      */
     private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+        System.out.println(">>>>>>>>>>>>> AnalyticsReporting >>>>>>>>>>>>>>>" + KEY_FILE);
         GoogleCredential credential = GoogleCredential
-                .fromStream(new FileInputStream(KEY_FILE.getFile()))
+                .fromStream(new FileInputStream(KEY_FILE))
                 .createScoped(AnalyticsReportingScopes.all());
 
         // Construct the Analytics Reporting service object.
