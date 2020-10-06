@@ -30,7 +30,6 @@ public class ResourceFiles {
 
     @Bean(name = "jsonFile")
     public File getKeyFile() {
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>" + jsonFile);
         try (InputStream is = jsonFile.getInputStream()) {
             Path temp = Files.createTempFile("resource-", ".ext");
             Files.copy(is, temp, StandardCopyOption.REPLACE_EXISTING);
