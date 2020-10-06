@@ -19,10 +19,13 @@ import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("api/v1.0/analytics/")
 public class GoogleAnalyticsReportingController {
+
+    private final static Logger LOGGER = Logger.getLogger(GoogleAnalyticsReportingController.class.getName());
 
     private static final String APPLICATION_NAME = "Kiwi-Travel Analytics Reporting";
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
@@ -40,7 +43,7 @@ public class GoogleAnalyticsReportingController {
      */
     private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-        System.out.println(">>>>>>>>>>>>> AnalyticsReporting >>>>>>>>>>>>>>>" + KEY_FILE);
+        LOGGER.info("Service account JSON received: " + GoogleAnalyticsReportingController.class.getName() + " " + KEY_FILE);
         GoogleCredential credential = GoogleCredential
                 .fromStream(new FileInputStream(KEY_FILE))
                 .createScoped(AnalyticsReportingScopes.all());
