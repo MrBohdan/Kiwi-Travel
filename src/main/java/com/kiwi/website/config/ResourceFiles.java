@@ -1,18 +1,13 @@
 package com.kiwi.website.config;
 
-import org.apache.tomcat.util.http.fileupload.FileUtils;
-import org.springframework.util.FileSystemUtils;
-import org.aspectj.util.FileUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
-import org.springframework.util.StreamUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
