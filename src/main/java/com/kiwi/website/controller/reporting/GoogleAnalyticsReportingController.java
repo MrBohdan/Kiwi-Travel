@@ -334,7 +334,6 @@ public class GoogleAnalyticsReportingController {
 
         // Create the Metrics object.
         String[] metricsArr = {
-                "ga:sessionDuration",
                 "ga:avgSessionDuration"
         };
 
