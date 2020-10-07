@@ -35,7 +35,6 @@ public class ResourceFilesConfig {
             LOGGER.info("Temp file created: " + temp);
             return temp.toFile();
         } catch (IOException e) {
-            //?????? heroku machine do not see bean without System.out.println ??????
             System.out.println();
             LOGGER.warning("FILE NOT FOUND: " + jsonFile);
             e.printStackTrace();
