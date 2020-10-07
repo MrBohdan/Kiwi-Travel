@@ -32,7 +32,7 @@ public class ResourceFilesConfig {
         try (InputStream is = jsonFile.getInputStream()) {
             Path temp = Files.createTempFile("resource-", ".ext");
             Files.copy(is, temp, StandardCopyOption.REPLACE_EXISTING);
-            LOGGER.info("Temp file created: "+ temp);
+            LOGGER.info("Temp file created: " + temp);
             return temp.toFile();
         } catch (IOException e) {
             //?????? heroku machine do not see bean without System.out.println ??????
