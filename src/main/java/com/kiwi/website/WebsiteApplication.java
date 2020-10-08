@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EntityScan(basePackages = {"com.kiwi.website.model"})
 @EnableJpaRepositories("com.kiwi.website.repository")
-@ComponentScan(basePackages = {"com.kiwi.website.*","com.kiwi.config"})
+@ComponentScan(basePackages = {"com.kiwi.website.*", "com.kiwi.config.ResourceFilesConfig"})
 public class WebsiteApplication {
 
     public static void main(String[] args) {

@@ -1,6 +1,5 @@
 package com.kiwi.website.config;
 
-import com.kiwi.website.controller.reporting.GoogleAnalyticsReportingController;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,15 +28,15 @@ public class ResourceFilesConfig {
 
     @Bean(name = "jsonFile")
     public File getKeyFile() {
-        System.out.println(">>>>>>>>>>>>> ResourceFilesConfig >>>>>>>>>>>>>>>" + jsonFile);
-        LOGGER.info("Service account JSON received: " + jsonFile);
+        LOGGER.info("Service account JSON loaded: " + jsonFile);
         try (InputStream is = jsonFile.getInputStream()) {
             Path temp = Files.createTempFile("resource-", ".ext");
             Files.copy(is, temp, StandardCopyOption.REPLACE_EXISTING);
+            LOGGER.info("Temp file created: " + temp);
             return temp.toFile();
         } catch (IOException e) {
-            LOGGER.info("Service account JSON received: FILE NOT FOUND" + jsonFile);
-            System.out.println(">>>>>>>>>>>>> ResourceFilesConfig >>>>>>>>>>>>>>> FILE NOT FOUND");
+            System.out.println();
+            LOGGER.warning("FILE NOT FOUND: " + jsonFile);
             e.printStackTrace();
         }
         return null;

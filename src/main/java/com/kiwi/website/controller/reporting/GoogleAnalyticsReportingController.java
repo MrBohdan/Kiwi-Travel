@@ -43,7 +43,6 @@ public class GoogleAnalyticsReportingController {
      */
     private static AnalyticsReporting initializeAnalyticsReporting() throws GeneralSecurityException, IOException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-        LOGGER.info("Service account JSON received: "+ KEY_FILE);
         GoogleCredential credential = GoogleCredential
                 .fromStream(new FileInputStream(KEY_FILE))
                 .createScoped(AnalyticsReportingScopes.all());
@@ -333,7 +332,6 @@ public class GoogleAnalyticsReportingController {
 
         // Create the Metrics object.
         String[] metricsArr = {
-                "ga:sessionDuration",
                 "ga:avgSessionDuration"
         };
 
